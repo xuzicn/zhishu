@@ -1,0 +1,87 @@
+<template>
+    <div class="home-page">
+        <hd></hd>
+        <div class='bd'>
+            <div class="content-wrapper">
+                <div class="title">聚焦实业 智数在握</div>
+                <p class='content'>我们陪伴创业，</p>
+                <p class='content'>我们培育创新，</p>
+                <p class='content'>我们投资于产业“智能化”升级</p>
+                <p class='content'>和“数字化”变革的成长型企业。</p>
+                <div class="detail">
+                    <div class="btn iconfont">&#xe61f;</div>
+                    <p>点击了解我们的投资领域</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+import hd from '../components/hd.vue';
+
+export default {
+    components: {
+        hd
+    }
+}
+</script>
+
+<!-- Add "scoped" attribute to limit CSS to this component only -->
+<style scoped>
+.home-page {
+    background-image: url('../assets/home-bg.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-position: left center;
+}
+.bd {
+    flex: 1;
+    color: #313e48;
+}
+.content-wrapper {
+    width: 330px;
+    display: inline-block;
+    position: absolute;
+    right: 111px;
+    bottom: 120px;
+}
+.title {
+    font-size: 39px;
+    color: #ee8061;
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+.content {
+    font-size: 23px;
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0px;
+}
+.detail {
+    display: flex;
+    line-height: 35px;
+    margin-top: 58px;
+}
+.detail .btn {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 1px solid #313e48;
+    box-sizing: border-box;
+    font-size: 23px;
+    text-align: center;
+}
+.detail p {
+    flex: 1;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 10px;
+}
+</style>
