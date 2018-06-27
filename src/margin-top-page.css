@@ -1,0 +1,53 @@
+.margin-top-page {
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    background-position: left center;
+    margin-top: 100px;
+}
+
+.margin-top-page .bd {
+    flex: 1;
+    color: #fff;
+}
+.margin-top-page .content-wrapper {
+    display: inline-block;
+    position: absolute;
+    left: 168px;
+    right: 168px;
+    top: 112px;
+}
+.margin-top-page .title {
+    font-size: 35px;
+    display: inline-block;
+    width: 100%;
+    font-weight: bold;
+    margin-bottom: 16px;
+}
+.margin-top-page .content {
+    font-size: 13px;
+    display: inline-block;
+    width: 100%;
+    margin: 5px 0px;
+}
+.margin-top-page .detail {
+    display: flex;
+    line-height: 35px;
+    margin-top: 58px;
+}
+.margin-top-page .detail .btn {
+    height: 35px;
+    width: 35px;
+    border-radius: 50%;
+    border: 1px solid #313e48;
+    box-sizing: border-box;
+    font-size: 23px;
+    text-align: center;
+}
+.margin-top-page .detail p {
+    flex: 1;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 10px;
+}

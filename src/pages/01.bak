@@ -1,8 +1,7 @@
 <template>
-    <div class="home-page">
-        <hd></hd>
+    <div class="p01">
         <div class='bd'>
-            <div class="content-wrapper">
+            <div class="content-wrapper fade-in-content">
                 <div class="title">聚焦实业 智数在握</div>
                 <p class='content'>我们陪伴创业，</p>
                 <p class='content'>我们培育创新，</p>
@@ -18,25 +17,18 @@
 </template>
 
 <script>
-import hd from '../components/hd.vue';
-
 export default {
-    components: {
-        hd
-    }
 }
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.home-page {
+.p01 {
     background-image: url('../assets/home-bg.png');
     background-repeat: no-repeat;
     background-size: cover;
-    position: relative;
     display: flex;
     flex-direction: column;
-    height: 100%;
     background-position: left center;
 }
 .bd {

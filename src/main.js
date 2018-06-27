@@ -2,13 +2,14 @@ import Vue from 'vue/dist/vue.common.js';
 import App from './App.vue';
 import VueRouter from 'vue-router';
 
-import home from './pages/home.vue';
+import p01 from './pages/01.vue';
+import p02 from './pages/02.vue';
+import p03 from './pages/03.vue';
+import p04 from './pages/04.vue';
 
 Vue.use(VueRouter);
 
 Vue.config.productionTip = false;
-
-const Bar = { template: '<div>bar</div>' }
 
 // 2. Define some routes
 // Each route should map to a component. The "component" can
@@ -16,8 +17,10 @@ const Bar = { template: '<div>bar</div>' }
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/home', component: home },
-  { path: '/bar', component: Bar }
+  { path: '/01', component: p01 },
+  { path: '/02', component: p02 },
+  { path: '/03', component: p03 },
+  { path: '/04', component: p04 }
 ]
 
 // 3. Create the router instance and pass the `routes` option
