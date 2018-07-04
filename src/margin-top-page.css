@@ -5,6 +5,7 @@
     flex-direction: column;
     background-position: left center;
     margin-top: 100px;
+    min-height: 430px;
 }
 
 .margin-top-page .bd {
@@ -12,6 +13,10 @@
     color: #fff;
 }
 .margin-top-page .content-wrapper {
+    display: inline-block;
+    position: absolute;
+}
+.margin-top-page.common .content-wrapper {
     display: inline-block;
     position: absolute;
     left: 168px;
@@ -26,7 +31,7 @@
     margin-bottom: 16px;
 }
 .margin-top-page .content {
-    font-size: 13px;
+    font-size: 15px;
     display: inline-block;
     width: 100%;
     margin: 5px 0px;

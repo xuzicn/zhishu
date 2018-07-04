@@ -1,16 +1,12 @@
 <template>
-    <div class="margin-top-page">
+    <div class="margin-top-page common">
         <div class='bd'>
             <div class="content-wrapper fade-in-content">
-                <div class="title">投资理念</div>
-                <p class='content'>我们深知创业维艰，</p>
-                <p class='content'>我们熟谙企业成长的客观规律，</p>
-                <p class='content'>我们坚信创新的技术和商业模式带来的巨大价值，</p>
-                <p class='content'>我们秉持“主动赋能式投资”；</p>
-                <p class='content'>我们洞悉行业市场和细分应用；</p>
-                <p class='content'>我们分享战略思考、传授管理技能；</p>
-                <p class='content'>我们嫁接行业资源、帮助人才成长；</p>
-                <p class='content'>我们和创业伙伴一同发现成长的机遇，并肩应对那些至关重要的选择</p>
+                <div class="title">智能能源</div>
+                <p class='content'>随着电力负荷的高速增长，能源产供用体系将发生</p>
+                <p class='content'>重大变化。电力输配和管理将更柔性、更智能。储</p>
+                <p class='content'>能、电力电子、微网以及电力可靠性管理将带来巨</p>
+                <p class='content'>大技术升级和管理变革。</p>
             </div>
         </div>
     </div>
@@ -25,8 +21,5 @@ export default {
 <style scoped>
 .margin-top-page {
     background-image: url('../assets/04-bg.png');
-}
-.margin-top-page .content-wrapper {
-    color: #313e48;
 }
 </style>

@@ -1,12 +1,12 @@
 <template>
-    <div class="margin-top-page">
+    <div class="margin-top-page common">
         <div class='bd'>
             <div class="content-wrapper fade-in-content">
-                <div class="title">智能能源</div>
-                <p class='content'>随着电力负荷的高速增长，能源产供用体系将发生</p>
-                <p class='content'>重大变化。电力输配和管理将更柔性、更智能。储</p>
-                <p class='content'>能、电力电子、微网以及电力可靠性管理将带来巨</p>
-                <p class='content'>大技术升级和管理变革。</p>
+                <div class="title">楼宇科技</div>
+                <p class='content'>中国是全球最大的新建建筑市场和存量市场，数字</p>
+                <p class='content'>化技术推动建筑设计手段、施工管理、安防技术、</p>
+                <p class='content'>物业运营发生重大变化，让建筑和管理“更聪明”</p>
+                <p class='content'>是不可阻挡的趋势。</p>
             </div>
         </div>
     </div>

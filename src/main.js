@@ -6,6 +6,8 @@ import p01 from './pages/01.vue';
 import p02 from './pages/02.vue';
 import p03 from './pages/03.vue';
 import p04 from './pages/04.vue';
+import p05 from './pages/05.vue';
+import p06 from './pages/06.vue';
 
 Vue.use(VueRouter);
 
@@ -17,19 +19,21 @@ Vue.config.productionTip = false;
 // `Vue.extend()`, or just a component options object.
 // We'll talk about nested routes later.
 const routes = [
-  { path: '/01', component: p01 },
-  { path: '/02', component: p02 },
-  { path: '/03', component: p03 },
-  { path: '/04', component: p04 }
-]
+    { path: '/01', component: p01 },
+    { path: '/02', component: p02 },
+    { path: '/03', component: p03 },
+    { path: '/04', component: p04 },
+    { path: '/05', component: p05 },
+    { path: '/06', component: p06 }
+];
 
 // 3. Create the router instance and pass the `routes` option
 // You can pass in additional options here, but let's
 // keep it simple for now.
 const router = new VueRouter({
-  routes // short for `routes: routes`
+    routes // short for `routes: routes`
 })
 new Vue({
     router,
-  render: h => h(App)
+    render: h => h(App)
 }).$mount('#app')
