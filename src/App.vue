@@ -5,7 +5,7 @@
             <router-view class="app-bd"></router-view>
         </transition>
         <div class="nav" v-if="pageDepth===1">
-            <div v-for="n in 6" v-bind:class="{'active':pageIndex===n, 'item':true}" @click="goTo(n)"></div>
+            <div :key="n" v-for="n in 6" v-bind:class="{'active':pageIndex===n, 'item':true}" @click="goTo(n)"></div>
         </div>
     </div>
 </template>
@@ -52,8 +52,8 @@ export default {
             }
             this.$router.replace({ path: n });
         },
-        onScroll(e) {
-            console.log(e);
+        onScroll() {
+            // console.log(e);
         }
     }
 }
