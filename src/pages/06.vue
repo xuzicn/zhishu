@@ -17,7 +17,7 @@
                     <div class="avatar a01"></div>
                 </div>
                 <div class="avatar-item">
-                    
+                    <div class="avatar a01"></div>
                 </div>
             </div>
             <div class="avatar-ct">
@@ -25,7 +25,23 @@
                     <div class="avatar a02"></div>
                 </div>
                 <div class="avatar-item">
+                    <div class="avatar a06"></div>
+                </div>
+            </div>
+            <div class="avatar-ct">
+                <div class="avatar-item">
                     <div class="avatar a03"></div>
+                </div>
+                <div class="avatar-item">
+                    <div class="avatar a03"></div>
+                </div>
+            </div>
+            <div class="avatar-ct">
+                <div class="avatar-item">
+                    <div class="avatar a05"></div>
+                </div>
+                <div class="avatar-item">
+                    <div class="avatar a08"></div>
                 </div>
             </div>
             <div class="avatar-ct">
@@ -33,20 +49,12 @@
                     <div class="avatar a04"></div>
                 </div>
                 <div class="avatar-item">
-                    <div class="avatar a05"></div>
+                    <div class="avatar a04"></div>
                 </div>
             </div>
             <div class="avatar-ct">
-                <div class="avatar-item">
-                    <div class="avatar a06"></div>
-                </div>
                 <div class="avatar-item">
                     <div class="avatar a07"></div>
-                </div>
-            </div>
-            <div class="avatar-ct">
-                <div class="avatar-item">
-                    <div class="avatar a08"></div>
                 </div>
                 <div class="avatar-item">
                     <div class="avatar a09"></div>
