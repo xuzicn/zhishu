@@ -55,6 +55,9 @@ export default {
         onScroll() {
             // console.log(e);
         }
+    },
+    mounted() {
+        this.pageIndex = parseInt(this.$route.path.replace('/', ''));
     }
 }
 </script>

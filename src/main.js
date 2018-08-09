@@ -32,8 +32,17 @@ const routes = [
 // keep it simple for now.
 const router = new VueRouter({
     routes // short for `routes: routes`
-})
-new Vue({
+});
+const major = new Vue({
     router,
     render: h => h(App)
-}).$mount('#app')
+}).$mount('#app');
+
+setInterval(function () {
+    const index = parseInt(major.$route.path.replace('/', ''));
+    if (index >= 6) {
+        major.$router.replace('/01');
+    } else {
+        major.$router.replace('/0' + (index + 1));
+    }
+}, 10000);

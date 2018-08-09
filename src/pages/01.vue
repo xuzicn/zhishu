@@ -29,8 +29,8 @@ export default {
 }
 .home .content-wrapper {
     width: 330px;
-    right: 111px;
-    bottom: 120px;
+    right: 161px;
+    bottom: 150px;
 }
 .home .content-wrapper .title {
     font-size: 39px;
