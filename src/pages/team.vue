@@ -12,8 +12,8 @@
             </div>
         </div>
         <div class='foot'>
-            <div v-for="(row, rindex) in profiles" :class='"avatar-ct " + ((rindex===profiles.length-1)?"last":"")'>
-                <div v-for="p in row" :class='"avatar-item " + (expandedItem===p?"expanded":"collapsed")' @click="toggleItem(p)">
+            <div :key="rindex" v-for="(row, rindex) in profiles" :class='"avatar-ct " + ((rindex===profiles.length-1)?"last":"")'>
+                <div :key="index" v-for="(p, index) in row" :class='"avatar-item " + (expandedItem===p?"expanded":"collapsed")' @click="toggleItem(p)">
                     <div :class="'avatar ' + p.id"></div>
                     <div class="introduce">
                         <div class="name">{{p.intro.name}}</div>
