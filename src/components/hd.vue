@@ -214,16 +214,25 @@
                 </g>
             </g>
         </svg>
-        <div class="menu-wrapper">
-            <div class="btn"></div>
+        <div :class='"menu-wrapper " + (expanded?"":"collapsed")'>
+            <ul>
+                <li class="menu-01" @click="$router.replace('/hangye')">被投行业</li>
+                <li class="menu-02" @click="$router.replace('/linian')">投资理念</li>
+                <li class="menu-03" @click="$router.replace('/team')">投资团队</li>
+                <li class="menu-04" @click="$router.replace('/contact')">联系我们</li>
+            </ul>
+            <div @click="expanded=!expanded" class="btn iconfont icon icon-more"></div>
         </div>
-        <!-- <img src="../assets/logo.png"> -->
     </div>
 </template>
 
 <script>
 export default {
-
+    data() {
+        return {
+            expanded: false
+        };
+    }
 };
 </script>
 
@@ -233,6 +242,7 @@ export default {
     width: 100%;
     left: 0rem;
     min-height: .95rem;
+    z-index: 1;
 }
 .hd svg {
     margin-left: .19rem;
@@ -245,20 +255,67 @@ export default {
     top: -.49rem;
 }
 .menu-wrapper {
-    position: absolute;
+    /*position: absolute;
     top: .21rem;
-    right: 1.11rem;
+    right: 1.11rem;*/
+    font-size: .14rem;
+    color: #313e48;
+    list-style: none;
+}
+/*.menu-wrapper ul {
+    display: inline-block;
+}*/
+.menu-wrapper ul li {
+    display: inline-block;
+    cursor: pointer;
+    line-height: .35rem;
+    position: absolute;
+    top: .33rem;
+    transition: all ease .3s;
+    opacity: 1;
+}
+.menu-wrapper ul li:hover {
+    text-shadow: 0 0 .01rem rgba(0,0,0,.4);
+}
+.menu-wrapper ul li.menu-01 {
+    right: 4.38rem;
+}
+.menu-wrapper ul li.menu-02 {
+    right: 3.42rem;
+}
+.menu-wrapper ul li.menu-03 {
+    right: 2.56rem;
+}
+.menu-wrapper ul li.menu-04 {
+    right: 1.7rem;
+}
+.menu-wrapper.collapsed ul li {
+    opacity: 0;
+}
+.menu-wrapper.collapsed ul li.menu-01 {
+    transform: translateX(3.38rem);
+}
+.menu-wrapper.collapsed ul li.menu-02 {
+    transform: translateX(2.42rem);
+}
+.menu-wrapper.collapsed ul li.menu-03 {
+    transform: translateX(1.56rem);
+}
+.menu-wrapper.collapsed ul li.menu-04 {
+    transform: translateX(0.70rem);
 }
 .menu-wrapper .btn {
     display: inline-block;
     width: .33rem;
     height: .33rem;
     cursor: pointer;
-    transition: all 0.2s ease;
-    border-radius: .02rem;
-    position: relative;
+    font-size: .3rem;
+    text-align: center;
+    position: absolute;
+    top: .35rem;
+    right: 1.16rem;
 }
-.menu-wrapper .btn:hover {
+/*.menu-wrapper .btn:hover {
     background-color: #c9c9c0;
 }
 .menu-wrapper .btn:before {
@@ -273,9 +330,9 @@ export default {
     position: absolute;
     left: .03rem;
     box-shadow: .11rem 0 0 0 #313e48, .22rem 0 0 0 #313e48;
-}
-.menu-wrapper .btn:hover:before {
+}*/
+/*.menu-wrapper .btn:hover:before {
     background-color: #fff;
     box-shadow: .11rem 0 0 0 #fff, .22rem 0 0 0 #fff;
-}
+}*/
 </style>

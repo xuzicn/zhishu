@@ -1,7 +1,22 @@
 <template>
-    <div id="app" @mousewheel="onScroll">
+    <div id="app">
+        <link rel="preload" as="image" href="/assets/home.png">
+        <link rel="preload" as="image" href="/assets/01-hangye.png">
+        <link rel="preload" as="image" href="/assets/02-hangye.png">
+        <link rel="preload" as="image" href="/assets/03-hangye.png">
+        <link rel="preload" as="image" href="/assets/05-bg.png">
+        <link rel="preload" as="image" href="/assets/06-bg.png">
+        <link rel="preload" as="image" href="/assets/avatars/01.png">
+        <link rel="preload" as="image" href="/assets/avatars/02.png">
+        <link rel="preload" as="image" href="/assets/avatars/03.png">
+        <link rel="preload" as="image" href="/assets/avatars/04.png">
+        <link rel="preload" as="image" href="/assets/avatars/05.png">
+        <link rel="preload" as="image" href="/assets/avatars/06.png">
+        <link rel="preload" as="image" href="/assets/avatars/07.png">
+        <link rel="preload" as="image" href="/assets/avatars/08.png">
+        <link rel="preload" as="image" href="/assets/avatars/09.png">
         <hd></hd>
-        <transition :name="transitionName" @scroll="onScroll">
+        <transition :name="transitionName">
             <router-view class="app-bd"></router-view>
         </transition>
         <!-- <div class="nav" v-if="pageDepth===1">
@@ -12,11 +27,14 @@
 
 <script>
 import hd from './components/hd.vue';
-// import throttle from 'lodash/throttle';
-// // console.log(throttle)
 
-// let scorllYList = [];
-// let scrollThread = undefined;
+const routes = [
+    '/home',
+    '/hangye',
+    '/linian',
+    '/team',
+    '/contact'
+];
 
 export default {
     components: {
@@ -28,25 +46,23 @@ export default {
             scrolling: false,
             transitionName: 'slide-up',
             pageIndex: 1,
-            pageDepth: 1
+            // pageDepth: 1
         }
     },
     watch: {
         '$route' (to, from) {
-            const toPaths = to.path.split('/').filter(function (a) {
-                return !!a;
-            });
-            const fromPaths = from.path.split('/').filter(function (a) {
-                return !!a;
-            });
+            const toPaths = routes.indexOf(to.path),
+                fromPaths = routes.indexOf(from.path);
 
-            if (toPaths.length === 1 && fromPaths.length === 1) {
-                this.transitionName = parseInt(toPaths[0]) > parseInt(fromPaths[0]) ? 'slide-down' : 'slide-up'
+            if (toPaths > fromPaths) {
+                this.transitionName = 'slide-down';
+            } else if (toPaths < fromPaths) {
+                this.transitionName = 'slide-up';
             } else {
                 this.transitionName = '';
             }
             this.pageIndex = parseInt(toPaths[0]);
-            this.pageDepth = toPaths.length;
+            // this.pageDepth = toPaths.length;
         }
     },
     methods: {
@@ -57,9 +73,9 @@ export default {
                 n = n.toString();
             }
             this.$router.replace({ path: n });
-        },
-        onScroll(e) {
-            const me = this;
+        // },
+        // onScroll(e) {
+        //     const me = this;
             // e.preventDefault();
 
             // if (me.scrolling) return;
@@ -162,22 +178,6 @@ export default {
 </script>
 
 <style>
-@font-face {
-    font-family: 'iconfont';  /* project id 711353 */
-    src: url('//at.alicdn.com/t/font_711353_ausj3si9mom.eot');
-    src: url('//at.alicdn.com/t/font_711353_ausj3si9mom.eot?#iefix') format('embedded-opentype'),
-    url('//at.alicdn.com/t/font_711353_ausj3si9mom.woff') format('woff'),
-    url('//at.alicdn.com/t/font_711353_ausj3si9mom.ttf') format('truetype'),
-    url('//at.alicdn.com/t/font_711353_ausj3si9mom.svg#iconfont') format('svg');
-}
-.iconfont {
-    font-family:"iconfont" !important;
-    font-size:.16rem;
-    font-style:normal;
-    -webkit-font-smoothing: antialiased;
-    -webkit-text-stroke-width: 0.2px;
-    -moz-osx-font-smoothing: grayscale;
-}
 .slide-up-enter, .slide-down-leave-active {
     opacity: 0;
     transform: translate(0, -100%);

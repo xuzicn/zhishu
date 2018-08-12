@@ -8,7 +8,7 @@
                 <p class='content'>我们投资于产业“智能化”升级</p>
                 <p class='content'>和“数字化”变革的成长型企业。</p>
                 <div class="detail" @click="$router.replace('/hangye')">
-                    <div class="btn iconfont">&#xe61f;</div>
+                    <div class="btn icon iconfont icon-xia"></div>
                     <p>点击了解我们的投资领域</p>
                 </div>
             </div>
