@@ -51,6 +51,12 @@ export default {
 .home .detail {
     color: #313e48;
     cursor: pointer;
-
+}
+.home .detail .icon {
+    transition: all .1s ease;
+}
+.home .detail:hover .icon {
+    color: #ee8061;
+    border-color: #ee8061;
 }
 </style>

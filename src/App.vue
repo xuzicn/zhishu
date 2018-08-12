@@ -1,20 +1,5 @@
 <template>
     <div id="app">
-        <link rel="preload" as="image" href="/assets/home.png">
-        <link rel="preload" as="image" href="/assets/01-hangye.png">
-        <link rel="preload" as="image" href="/assets/02-hangye.png">
-        <link rel="preload" as="image" href="/assets/03-hangye.png">
-        <link rel="preload" as="image" href="/assets/05-bg.png">
-        <link rel="preload" as="image" href="/assets/06-bg.png">
-        <link rel="preload" as="image" href="/assets/avatars/01.png">
-        <link rel="preload" as="image" href="/assets/avatars/02.png">
-        <link rel="preload" as="image" href="/assets/avatars/03.png">
-        <link rel="preload" as="image" href="/assets/avatars/04.png">
-        <link rel="preload" as="image" href="/assets/avatars/05.png">
-        <link rel="preload" as="image" href="/assets/avatars/06.png">
-        <link rel="preload" as="image" href="/assets/avatars/07.png">
-        <link rel="preload" as="image" href="/assets/avatars/08.png">
-        <link rel="preload" as="image" href="/assets/avatars/09.png">
         <hd></hd>
         <transition :name="transitionName">
             <router-view class="app-bd"></router-view>

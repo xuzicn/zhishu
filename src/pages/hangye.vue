@@ -8,9 +8,10 @@
                     <p class='content'>独角兽。生产智能化技术、管理数字化手段推动中</p>
                     <p class='content'>国制造向“高精”、“高速”、“高效”转型升级。</p>
                     <svg v-if="page===1" :class='noCircleAni?"no-ani progress":"progress"' width="440" height="440" viewbox="0 0 440 440">
-                        <circle cx="220" cy="220" r="170" stroke-width="20" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
-                        <circle cx="220" cy="220" r="170" stroke-width="20" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
-                        <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{countdown>=10?countdown:('0'+countdown)}}</text>
+                        <circle cx="220" cy="220" r="170" stroke-width="15" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
+                        <circle cx="220" cy="220" r="170" stroke-width="15" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
+                        <circle cx="220" cy="220" r="148" stroke="none" fill="rgba(255,255,255,.06)" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
+                        <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{'0' + page}}</text>
                     </svg>
                 </div>
             </div>
@@ -24,7 +25,8 @@
                     <svg v-if="page===2" :class='noCircleAni?"no-ani progress":"progress"' width="440" height="440" viewbox="0 0 440 440">
                         <circle cx="220" cy="220" r="170" stroke-width="20" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
                         <circle cx="220" cy="220" r="170" stroke-width="20" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
-                        <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{countdown>=10?countdown:('0'+countdown)}}</text>
+                        <circle cx="220" cy="220" r="148" stroke="none" fill="rgba(255,255,255,.06)" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
+                        <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{'0' + page}}</text>
                     </svg>
                 </div>
             </div>
@@ -38,7 +40,8 @@
                     <svg v-if="page===3" :class='noCircleAni?"no-ani progress":"progress"' width="440" height="440" viewbox="0 0 440 440">
                         <circle cx="220" cy="220" r="170" stroke-width="20" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
                         <circle cx="220" cy="220" r="170" stroke-width="20" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
-                        <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{countdown>=10?countdown:('0'+countdown)}}</text>
+                        <circle cx="220" cy="220" r="148" stroke="none" fill="rgba(255,255,255,.06)" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
+                        <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{'0' + page}}</text>
                     </svg>
                 </div>
             </div>
@@ -86,11 +89,11 @@ export default {
                     }
                 }, 1000);
             }).then(function () {
-                me.noCircleAni = true;
+                // me.noCircleAni = true;
                 return new Promise(function (resolve) {
                     setTimeout(function () {
                         resolve();
-                        me.noCircleAni = false;
+                        // me.noCircleAni = false;
                     }, 500);
                 });
             }).then(function () {
@@ -101,7 +104,7 @@ export default {
                 }
                 me.moveNextPage();
                 me.countdown = countdown;
-                me.circleProgress = '0 1069';
+                me.circleProgress = '1069 1069';
             });
         }
     }
