@@ -1,13 +1,13 @@
 <template>
     <div class="margin-top-page home">
         <div class='bd'>
-            <div class="content-wrapper fade-in-content ">
+            <div class="content-wrapper fade-in-content">
                 <div class="title">聚焦实业 智数在握</div>
                 <p class='content'>我们陪伴创业，</p>
                 <p class='content'>我们培育创新，</p>
                 <p class='content'>我们投资于产业“智能化”升级</p>
                 <p class='content'>和“数字化”变革的成长型企业。</p>
-                <div class="detail">
+                <div class="detail" @click="$router.replace('/hangye')">
                     <div class="btn iconfont">&#xe61f;</div>
                     <p>点击了解我们的投资领域</p>
                 </div>
@@ -24,28 +24,29 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .home.margin-top-page {
-    margin-top: 0px;
-    background-image: url('../assets/01-bg.png');
+    background-image: url('../assets/home.png');
+    position: relative;
+    min-height: 6rem;
 }
 .home .content-wrapper {
-    width: 330px;
-    right: 161px;
-    bottom: 150px;
+    width: 3.30rem;
+    right: 1.11rem;
+    bottom: 1.50rem;
 }
 .home .content-wrapper .title {
-    font-size: 39px;
+    font-size: .39rem;
     color: #ee8061;
-    font-size: 39px;
+    font-size: .39rem;
     font-weight: bold;
-    margin-bottom: 16px;
+    margin-bottom: .16rem;
 }
 
 .home .content {
-    font-size: 23px;
+    font-size: .23rem;
     color: #313e48;
     display: inline-block;
     width: 100%;
-    margin: 5px 0px;
+    margin: .05rem 0rem;
 }
 .home .detail {
     color: #313e48;

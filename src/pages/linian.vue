@@ -23,10 +23,14 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-.margin-top-page {
+.margin-top-page.common {
     background-image: url('../assets/05-bg.png');
+    position: relative;
+    min-height: 6rem;
 }
-.margin-top-page .content-wrapper {
+.margin-top-page.common .content-wrapper {
     color: #313e48;
+    right: 1.11rem;
+    bottom: 1.50rem;
 }
 </style>

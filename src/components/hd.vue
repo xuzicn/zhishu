@@ -1,7 +1,7 @@
 <template>
     <div class="hd">
-        <svg version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-     width="379.333px" height="194.047px" viewBox="0 0 379.333 194.047" enable-background="new 0 0 379.333 194.047"
+        <svg @click="$router.replace('/home')" version="1.1" id="图层_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0rem" y="0rem"
+     width="3.79333rem" height="1.94047rem" viewBox="0 0 379.333 194.047" enable-background="new 0 0 379.333 194.047"
      xml:space="preserve" class="logo">
             <g>
                 <g>
@@ -229,35 +229,33 @@ export default {
 
 <style scoped>
 .hd {
-    /*background-image: url('../assets/logo.png');*/
-    height: 100px;
-    position: absolute;
-    z-index: 10000;
+    height: .95rem;
     width: 100%;
-    left: 0px;
-    top: 0px;
-/*    background-repeat: no-repeat;
-    background-position: 111px 21px;
-    position: relative;*/
+    left: 0rem;
+    min-height: .95rem;
+}
+.hd svg {
+    margin-left: .19rem;
+    cursor: pointer;
 }
 .hd .logo {
-    transform: scale(0.63);
+    transform: scale(0.752);
     position: absolute;
-    left: -9px;
-    top: -51px;
+    left: -.09rem;
+    top: -.49rem;
 }
 .menu-wrapper {
     position: absolute;
-    top: 21px;
-    right: 111px;
+    top: .21rem;
+    right: 1.11rem;
 }
 .menu-wrapper .btn {
     display: inline-block;
-    width: 33px;
-    height: 33px;
+    width: .33rem;
+    height: .33rem;
     cursor: pointer;
     transition: all 0.2s ease;
-    border-radius: 2px;
+    border-radius: .02rem;
     position: relative;
 }
 .menu-wrapper .btn:hover {
@@ -266,18 +264,18 @@ export default {
 .menu-wrapper .btn:before {
     transition: all 0.2s ease;
     content: ' ';
-    width: 5px;
-    height: 5px;
+    width: .05rem;
+    height: .05rem;
     background-color: #313e48;
     border-radius: 50%;
     display: inline-block;
-    top: 14px;
+    top: .14rem;
     position: absolute;
-    left: 3px;
-    box-shadow: 11px 0 0 0 #313e48, 22px 0 0 0 #313e48;
+    left: .03rem;
+    box-shadow: .11rem 0 0 0 #313e48, .22rem 0 0 0 #313e48;
 }
 .menu-wrapper .btn:hover:before {
     background-color: #fff;
-    box-shadow: 11px 0 0 0 #fff, 22px 0 0 0 #fff;
+    box-shadow: .11rem 0 0 0 #fff, .22rem 0 0 0 #fff;
 }
 </style>

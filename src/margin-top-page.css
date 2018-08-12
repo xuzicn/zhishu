@@ -1,13 +1,3 @@
-.margin-top-page {
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-    background-position: left center;
-    margin-top: 100px;
-    min-height: 430px;
-}
-
 .margin-top-page .bd {
     flex: 1;
     color: #fff;
@@ -19,40 +9,40 @@
 .margin-top-page.common .content-wrapper {
     display: inline-block;
     position: absolute;
-    left: 168px;
-    right: 168px;
-    top: 112px;
+    left: 1.68rem;
+    right: 1.68rem;
+    top: 1.12rem;
 }
 .margin-top-page .title {
-    font-size: 35px;
+    font-size: .35rem;
     display: inline-block;
     width: 100%;
     font-weight: bold;
-    margin-bottom: 16px;
+    margin-bottom: .16rem;
 }
 .margin-top-page .content {
-    font-size: 15px;
+    font-size: .15rem;
     display: inline-block;
     width: 100%;
-    margin: 5px 0px;
+    margin: .05rem 0rem;
 }
 .margin-top-page .detail {
     display: flex;
-    line-height: 35px;
-    margin-top: 58px;
+    line-height: .35rem;
+    margin-top: .58rem;
 }
 .margin-top-page .detail .btn {
-    height: 35px;
-    width: 35px;
+    height: .35rem;
+    width: .35rem;
     border-radius: 50%;
-    border: 1px solid #313e48;
+    border: .01rem solid #313e48;
     box-sizing: border-box;
-    font-size: 23px;
+    font-size: .23rem;
     text-align: center;
 }
 .margin-top-page .detail p {
     flex: 1;
-    font-size: 13px;
+    font-size: .13rem;
     font-weight: bold;
-    margin: 0 10px;
+    margin: 0 .10rem;
 }
