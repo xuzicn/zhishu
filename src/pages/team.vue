@@ -162,7 +162,7 @@ export default {
 }
 .margin-top-page .bd {
     background: #f4f4f4;
-    background-image: url('../assets/06-bg.png');
+    background-image: url('/assets/06-bg.png');
     height: 100%;
 }
 .margin-top-page .content-wrapper {
@@ -207,31 +207,31 @@ export default {
     padding-bottom: 100%;
 }
 .foot .avatar-ct .avatar-item .avatar.a01 {
-    background-image: url('../assets/avatars/01.png');
+    background-image: url('/assets/avatars/01.png');
 }
 .foot .avatar-ct .avatar-item .avatar.a02 {
-    background-image: url('../assets/avatars/02.png');
+    background-image: url('/assets/avatars/02.png');
 }
 .foot .avatar-ct .avatar-item .avatar.a03 {
-    background-image: url('../assets/avatars/03.png');
+    background-image: url('/assets/avatars/03.png');
 }
 .foot .avatar-ct .avatar-item .avatar.a04 {
-    background-image: url('../assets/avatars/04.png');
+    background-image: url('/assets/avatars/04.png');
 }
 .foot .avatar-ct .avatar-item .avatar.a05 {
-    background-image: url('../assets/avatars/05.png');
+    background-image: url('/assets/avatars/05.png');
 }
 .foot .avatar-ct .avatar-item .avatar.a06 {
-    background-image: url('../assets/avatars/06.png');
+    background-image: url('/assets/avatars/06.png');
 }
 .foot .avatar-ct .avatar-item .avatar.a07 {
-    background-image: url('../assets/avatars/07.png');
+    background-image: url('/assets/avatars/07.png');
 }
 .foot .avatar-ct .avatar-item .avatar.a08 {
-    background-image: url('../assets/avatars/08.png');
+    background-image: url('/assets/avatars/08.png');
 }
 .foot .avatar-ct .avatar-item .avatar.a09 {
-    background-image: url('../assets/avatars/09.png');
+    background-image: url('/assets/avatars/09.png');
 }
 .foot .avatar-ct .avatar-item .introduce {
     width: 324px;

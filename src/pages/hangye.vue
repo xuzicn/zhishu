@@ -161,14 +161,14 @@ export default {
     font-size: .13rem;
 }
 .hangye01 {
-    background-image: url('../assets/01-hangye.png');
+    background-image: url('/assets/01-hangye.png');
 }
 .hangye02 {
-    background-image: url('../assets/02-hangye.png');
+    background-image: url('/assets/02-hangye.png');
     transform: translateY(100%);
 }
 .hangye03 {
-    background-image: url('../assets/03-hangye.png');
+    background-image: url('/assets/03-hangye.png');
     transform: translateY(200%);
 }
 </style>

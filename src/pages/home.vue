@@ -24,7 +24,7 @@ export default {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .home.margin-top-page {
-    background-image: url('../assets/home.png');
+    background-image: url('/assets/home.png');
     position: relative;
     min-height: 6rem;
 }
