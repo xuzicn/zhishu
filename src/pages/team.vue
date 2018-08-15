@@ -3,12 +3,12 @@
         <div class='bd'>
             <div class="content-wrapper fade-in-content">
                 <div class="title">投资团队</div>
-                <p class='content'>我们也是创业者，我们专注于数字化，对细分跑道、业务模式、创</p>
-                <p class='content end'>业团队有独特理解，是“懂”创业伙伴的投资人；</p>
-                <p class='content'>我们帮助创业伙伴进行战略重构，人才提升，资源嫁接，创造我们</p>
-                <p class='content end'>和创业伙伴之间、创业伙伴相互之间的协同效应。</p>
-                <p class='content'>我们专注于规模化以及高增长的细分市场，优化资源配置和多种退</p>
-                <p class='content'>出机制，提高投资成功率和回报率。</p>
+                <p class='content'>我们专注于数字化，对细分跑道、业务模式、创业团队有独特</p>
+                <p class='content end'>理解，我们是“懂”创业伙伴的投资人</p>
+                <p class='content'>我们帮助创业伙伴进行战略重构，人才提升，资源嫁接，我们</p>
+                <p class='content end'>创造我们和创业伙伴之间、创业伙伴相互之间的协同效应</p>
+                <p class='content'>我们专注于规模化以及高增长的细分市场，我们优化资源配置</p>
+                <p class='content'>和规划多种退出机制，提高投资成功率和回报率</p>
             </div>
         </div>
         <div class='foot'>
@@ -258,11 +258,11 @@ export default {
     font-size: .28rem;
 }
 .foot .avatar-ct .avatar-item .introduce .title {
-    font-size: .13rem;
+    font-size: .15rem;
     margin-bottom: .3rem;
 }
 .foot .avatar-ct .avatar-item .introduce .intro-content {
-    font-size: .13rem;
+    font-size: .15rem;
 }
 .foot .avatar-ct.last .avatar-item .introduce {
     transform: translateY(-100%);

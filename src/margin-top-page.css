@@ -5,6 +5,7 @@
 .margin-top-page .content-wrapper {
     display: inline-block;
     position: absolute;
+    letter-spacing: .01rem;
 }
 .margin-top-page.common .content-wrapper {
     display: inline-block;
@@ -42,7 +43,7 @@
 }
 .margin-top-page .detail p {
     flex: 1;
-    font-size: .13rem;
+    font-size: .15rem;
     font-weight: bold;
     margin: 0 .10rem;
 }

@@ -6,7 +6,7 @@
                     <div class="title">先进制造</div>
                     <p class='content'>全球3C和汽车产能向中国转移，催生一批细分行业</p>
                     <p class='content'>独角兽。生产智能化技术、管理数字化手段推动中</p>
-                    <p class='content'>国制造向“高精”、“高速”、“高效”转型升级。</p>
+                    <p class='content'>国制造向“高精”、“高速”、“高效”转型升级</p>
                     <svg v-if="page===1" :class='noCircleAni?"no-ani progress":"progress"' width="440" height="440" viewbox="0 0 440 440">
                         <circle cx="220" cy="220" r="170" stroke-width="15" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
                         <circle cx="220" cy="220" r="170" stroke-width="15" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
@@ -21,7 +21,7 @@
                     <p class='content'>中国是全球最大的新建建筑市场和存量市场，数字</p>
                     <p class='content'>化技术推动建筑设计手段、施工管理、安防技术、</p>
                     <p class='content'>物业运营发生重大变化，让建筑和管理“更聪明”</p>
-                    <p class='content'>是不可阻挡的趋势。</p>
+                    <p class='content'>是不可阻挡的趋势</p>
                     <svg v-if="page===2" :class='noCircleAni?"no-ani progress":"progress"' width="440" height="440" viewbox="0 0 440 440">
                         <circle cx="220" cy="220" r="170" stroke-width="20" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
                         <circle cx="220" cy="220" r="170" stroke-width="20" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
@@ -36,12 +36,12 @@
                     <p class='content'>随着电力负荷的高速增长，能源产供用体系将发生</p>
                     <p class='content'>重大变化。电力输配和管理将更柔性、更智能。储</p>
                     <p class='content'>能、电力电子、微网以及电力可靠性管理将带来巨</p>
-                    <p class='content'>大技术升级和管理变革。</p>
+                    <p class='content'>大技术升级和管理变革</p>
                     <svg v-if="page===3" :class='noCircleAni?"no-ani progress":"progress"' width="440" height="440" viewbox="0 0 440 440">
                         <circle cx="220" cy="220" r="170" stroke-width="20" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
                         <circle cx="220" cy="220" r="170" stroke-width="20" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
                         <circle cx="220" cy="220" r="148" stroke="none" fill="rgba(255,255,255,.06)" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
-                        <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{'0' + page}}</text>
+                        <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{page}}</text>
                     </svg>
                 </div>
             </div>
@@ -158,7 +158,7 @@ export default {
 .hangye01 .content-wrapper .content,
 .hangye02 .content-wrapper .content,
 .hangye03 .content-wrapper .content {
-    font-size: .13rem;
+    font-size: .15rem;
 }
 .hangye01 {
     background-image: url('/assets/01-hangye.png');

@@ -6,7 +6,7 @@
                 <p class='content'>我们陪伴创业，</p>
                 <p class='content'>我们培育创新，</p>
                 <p class='content'>我们投资于产业“智能化”升级</p>
-                <p class='content'>和“数字化”变革的成长型企业。</p>
+                <p class='content'>和“数字化”变革的成长型企业</p>
                 <div class="detail" @click="$router.replace('/hangye')">
                     <div class="btn icon iconfont icon-xia"></div>
                     <p>点击了解我们的投资领域</p>
@@ -29,7 +29,7 @@ export default {
     min-height: 6rem;
 }
 .home .content-wrapper {
-    width: 3.30rem;
+    width: 3.40rem;
     right: 1.11rem;
     bottom: 1.50rem;
 }

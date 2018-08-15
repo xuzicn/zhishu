@@ -106,14 +106,12 @@
   </g>
  </g>
 </svg>
-        <div :class='"menu-wrapper " + (expanded?"":"collapsed")'>
+        <div class="placeholder"></div>
+        <div @mouseenter="expanded=true" @mouseleave="expanded=false" :class='"menu-wrapper " + (expanded?"":"collapsed")'>
             <ul>
-                <li class="menu-01" @click="$router.replace('/hangye')">被投行业</li>
-                <li class="menu-02" @click="$router.replace('/linian')">投资理念</li>
-                <li class="menu-03" @click="$router.replace('/team')">投资团队</li>
-                <li class="menu-04" @click="$router.replace('/contact')">联系我们</li>
+                <li v-for="(m, i) in menus" :class='"menu-0" + i + ($route.path===m.link?" active":"")' @click="$router.replace(m.link)">{{m.text}}</li>
             </ul>
-            <div @click="expanded=!expanded" class="btn iconfont icon icon-more"></div>
+            <div class="iconfont icon icon-more"></div>
         </div>
     </div>
 </template>
@@ -122,8 +120,32 @@
 export default {
     data() {
         return {
-            expanded: false
+            expanded: false,
+            menus: [{
+                text: '首页',
+                link: '/home'
+            }, {
+                text: '投资领域',
+                link: '/hangye'
+            }, {
+                text: '投资理念',
+                link: '/linian'
+            }, {
+                text: '投资团队',
+                link: '/team'
+            }, {
+                text: '联系我们',
+                link: '/contact'
+            }]
         };
+    },
+    methods: {
+        collapseMenu() {
+            const me = this;
+            setTimeout(function () {
+                me.expanded = false;
+            }, 100);
+        }
     }
 };
 </script>
@@ -135,17 +157,19 @@ export default {
     left: 0rem;
     min-height: .95rem;
     z-index: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 .hd svg {
     margin-left: 1.18rem;
-    margin-top: .165rem;
+    transform: scale(1.12);
     cursor: pointer;
 }
-.hd .logo {
-    /*transform: scale(0.752);*/
-    position: absolute;
-    left: -.09rem;
-    top: -.49rem;
+.hd .placeholder {
+    flex: 1;
+    /*height: 10px;
+    background: red;*/
 }
 .menu-wrapper {
     /*position: absolute;
@@ -154,21 +178,41 @@ export default {
     font-size: .14rem;
     color: #313e48;
     list-style: none;
+    margin-right: 1.16rem;
 }
-/*.menu-wrapper ul {
+.menu-wrapper .icon {
+    color: #ee8061;
     display: inline-block;
-}*/
+    width: .33rem;
+    height: .33rem;
+    cursor: pointer;
+    font-size: .3rem;
+    text-align: center;
+    transform: translateY(6px);
+}
+.menu-wrapper ul {
+    display: inline-block;
+}
 .menu-wrapper ul li {
     display: inline-block;
     cursor: pointer;
     line-height: .35rem;
-    position: absolute;
+    /*position: absolute;*/
     top: .33rem;
     transition: all ease .3s;
     opacity: 1;
+    padding: 0 .15rem;
+}
+.menu-wrapper ul li.active {
+    color: #ee8061;
+    border-bottom: .02rem solid #ee8061;
 }
 .menu-wrapper ul li:hover {
-    text-shadow: 0 0 .01rem rgba(0,0,0,.4);
+    color: #ee8061;
+    /*text-shadow: 0 0 .01rem rgba(0,0,0,.4);*/
+}
+.menu-wrapper ul li.menu-00 {
+    right: 5.34rem;
 }
 .menu-wrapper ul li.menu-01 {
     right: 4.38rem;
@@ -185,6 +229,9 @@ export default {
 .menu-wrapper.collapsed ul li {
     opacity: 0;
 }
+.menu-wrapper.collapsed ul li.menu-00 {
+    transform: translateX(4.34rem);
+}
 .menu-wrapper.collapsed ul li.menu-01 {
     transform: translateX(3.38rem);
 }
@@ -196,17 +243,6 @@ export default {
 }
 .menu-wrapper.collapsed ul li.menu-04 {
     transform: translateX(0.70rem);
-}
-.menu-wrapper .btn {
-    display: inline-block;
-    width: .33rem;
-    height: .33rem;
-    cursor: pointer;
-    font-size: .3rem;
-    text-align: center;
-    position: absolute;
-    top: .35rem;
-    right: 1.16rem;
 }
 /*.menu-wrapper .btn:hover {
     background-color: #c9c9c0;
