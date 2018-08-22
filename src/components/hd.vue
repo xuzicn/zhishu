@@ -107,9 +107,9 @@
  </g>
 </svg>
         <div class="placeholder"></div>
-        <div @mouseenter="expanded=true" @mouseleave="expanded=false" :class='"menu-wrapper " + (expanded?"":"collapsed")'>
+        <div @mouseleave="expanded=false" @mouseenter="expanded=true" :class='"menu-wrapper " + (expanded?"":"collapsed")'>
             <ul>
-                <li v-for="(m, i) in menus" :class='"menu-0" + i + ($route.path===m.link?" active":"")' @click="$router.replace(m.link)">{{m.text}}</li>
+                <li v-for="(m, i) in menus" :key="i" :class='"menu-0" + i + ($route.path===m.link?" active":"")' @click="$router.replace(m.link)">{{m.text}}</li>
             </ul>
             <div class="iconfont icon icon-more"></div>
         </div>
@@ -188,7 +188,7 @@ export default {
     cursor: pointer;
     font-size: .3rem;
     text-align: center;
-    transform: translateY(6px);
+    /*transform: translateY(6px);*/
 }
 .menu-wrapper ul {
     display: inline-block;
@@ -196,53 +196,60 @@ export default {
 .menu-wrapper ul li {
     display: inline-block;
     cursor: pointer;
-    line-height: .35rem;
-    /*position: absolute;*/
+    line-height: .29rem;
+    position: absolute;
     top: .33rem;
     transition: all ease .3s;
     opacity: 1;
-    padding: 0 .15rem;
+    margin: 0px;
+    width: .9rem;
+    text-align: center;
 }
 .menu-wrapper ul li.active {
     color: #ee8061;
     border-bottom: .02rem solid #ee8061;
 }
+/*.menu-wrapper ul li.active::before {
+    content: ' ';
+    display: inline-block;
+    width: 100%;
+}*/
 .menu-wrapper ul li:hover {
     color: #ee8061;
     /*text-shadow: 0 0 .01rem rgba(0,0,0,.4);*/
 }
 .menu-wrapper ul li.menu-00 {
-    right: 5.34rem;
+    right: 5.24rem;
 }
 .menu-wrapper ul li.menu-01 {
     right: 4.38rem;
 }
 .menu-wrapper ul li.menu-02 {
-    right: 3.42rem;
+    right: 3.52rem;
 }
 .menu-wrapper ul li.menu-03 {
-    right: 2.56rem;
+    right: 2.66rem;
 }
 .menu-wrapper ul li.menu-04 {
-    right: 1.7rem;
+    right: 1.8rem;
 }
 .menu-wrapper.collapsed ul li {
     opacity: 0;
 }
 .menu-wrapper.collapsed ul li.menu-00 {
-    transform: translateX(4.34rem);
+    transform: translateX(4.24rem);
 }
 .menu-wrapper.collapsed ul li.menu-01 {
     transform: translateX(3.38rem);
 }
 .menu-wrapper.collapsed ul li.menu-02 {
-    transform: translateX(2.42rem);
+    transform: translateX(2.52rem);
 }
 .menu-wrapper.collapsed ul li.menu-03 {
-    transform: translateX(1.56rem);
+    transform: translateX(1.66rem);
 }
 .menu-wrapper.collapsed ul li.menu-04 {
-    transform: translateX(0.70rem);
+    transform: translateX(0.80rem);
 }
 /*.menu-wrapper .btn:hover {
     background-color: #c9c9c0;

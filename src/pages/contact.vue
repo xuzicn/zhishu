@@ -54,7 +54,7 @@ export default {
 .margin-top-page.common .content-wrapper {
     position: absolute;
     color: #313e48;
-    width: 3.1rem;
+    width: 3.3rem;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
@@ -68,7 +68,7 @@ export default {
 }
 .margin-top-page.common .city {
     display: inline-block;
-    width: .5rem;
+    width: .6rem;
     margin-right: .3rem;
 }
 .margin-top-page.common .content-wrapper .content {
@@ -78,7 +78,7 @@ export default {
     margin-top: .25rem;
 }
 .content.mail .t {
-    width: 1.35rem;
+    width: 1.45rem;
     display: inline-block;
 }
 </style>
