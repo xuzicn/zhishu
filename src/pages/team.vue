@@ -221,6 +221,7 @@ export default {
     list-style: none;
     justify-content: center;
     margin: .16rem 0 0;
+    padding: 0;
 }
 .margin-top-page .intro-sections li {
     width: 1.62rem;
