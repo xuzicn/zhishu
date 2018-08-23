@@ -26,7 +26,7 @@
                     <div class="a2"></div>
                     <div class="a3"></div>
                 </div>
-                <div>投资团队</div>
+                <div>团队成员</div>
             </div>
         </div>
         <div class='foot' ref="ft">
@@ -220,7 +220,7 @@ export default {
     font-size: .11rem;
     list-style: none;
     justify-content: center;
-    margin-top: .16rem;
+    margin: .16rem 0 0;
 }
 .margin-top-page .intro-sections li {
     width: 1.62rem;
@@ -248,7 +248,7 @@ export default {
     background-position-x: -4.5rem;
 }
 .margin-top-page .intro-sections li:hover .item-bg {
-    box-shadow: 0 0 0 0.2rem #fff, 0 0 0.2rem 0.3rem rgba(0,0,0,0.2);
+    box-shadow: 0 0 0 0.2rem #fff, 0 0 0.2rem 0.3rem rgba(0,0,0,0.16);
 }
 .margin-top-page .intro-sections li img {
     margin-top: .39rem;
@@ -259,7 +259,7 @@ export default {
     opacity: 1;
 }
 .margin-top-page .intro-sections li .item-intro {
-    opacity: .4;
+    opacity: .66;
     transition: all ease .3s;
     padding: .14rem .04rem 0;
 }
