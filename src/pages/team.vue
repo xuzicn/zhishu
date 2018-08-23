@@ -4,8 +4,9 @@
             <div class="intro-sections">
                 <div class="title">投资团队</div>
                 <ul>
-                    <li v-for="(item, i) in intros">
+                    <li :key="i" v-for="(item, i) in intros" :class="'item active item-' + i">
                         <div class="item-bg"></div>
+                        <img src="/assets/team-hr.png">
                         <div class="item-intro">{{item.text}}</div>
                     </li>
                 </ul>
@@ -212,16 +213,58 @@ export default {
 }
 .margin-top-page .intro-sections .title {
     text-align: center;
+    font-size: .3rem;
 }
 .margin-top-page .intro-sections ul {
     display: flex;
+    font-size: .11rem;
+    list-style: none;
+    justify-content: center;
+    margin-top: .16rem;
 }
 .margin-top-page .intro-sections li {
     width: 1.62rem;
+    margin: 0 .29rem;
 }
 
-.margin-top-page .content-wrapper li .item-intro {
-    font-size: .15rem;
+.margin-top-page .intro-sections li .item-bg {
+    background-image: url('/assets/team-intro.png');
+    display: inline-block;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-repeat: no-repeat;
+    background-size: cover;
+    border-radius: 50%;
+    margin-left: .06rem;
+    transition: all ease .3s;
+}
+.margin-top-page .intro-sections li.item-1 .item-bg {
+    background-position-x: -1.5rem;
+}
+.margin-top-page .intro-sections li.item-2 .item-bg {
+    background-position-x: -3rem;
+}
+.margin-top-page .intro-sections li.item-3 .item-bg {
+    background-position-x: -4.5rem;
+}
+.margin-top-page .intro-sections li:hover .item-bg {
+    box-shadow: 0 0 0 0.2rem #fff, 0 0 0.2rem 0.3rem rgba(0,0,0,0.2);
+}
+.margin-top-page .intro-sections li img {
+    margin-top: .39rem;
+    transition: all ease .3s;
+    opacity: 0;
+}
+.margin-top-page .intro-sections li:hover img {
+    opacity: 1;
+}
+.margin-top-page .intro-sections li .item-intro {
+    opacity: .4;
+    transition: all ease .3s;
+    padding: .14rem .04rem 0;
+}
+.margin-top-page .intro-sections li:hover .item-intro {
+    opacity: 1;
 }
 .margin-top-page.profile .content.end {
     margin-bottom: .20rem;
