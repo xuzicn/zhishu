@@ -11,20 +11,11 @@
                     </li>
                 </ul>
             </div>
-<!--             <div class="content-wrapper fade-in-content">
-                <div class="title">投资团队</div>
-                <p class='content'>我们专注于数字化，对细分跑道、业务模式、创业团队有独特</p>
-                <p class='content end'>理解，我们是“懂”创业伙伴的投资人</p>
-                <p class='content'>我们帮助创业伙伴进行战略重构，人才提升，资源嫁接，我们</p>
-                <p class='content end'>创造我们和创业伙伴之间、创业伙伴相互之间的协同效应</p>
-                <p class='content'>我们专注于规模化以及高增长的细分市场，我们优化资源配置</p>
-                <p class='content'>和规划多种退出机制，提高投资成功率和回报率</p>
-            </div> -->
             <div class="next" @click="scrollToMember">
                 <div class="arrow">
-                    <div class="a1"></div>
-                    <div class="a2"></div>
-                    <div class="a3"></div>
+                    <div class="a1 down-arrow"></div>
+                    <div class="a2 down-arrow"></div>
+                    <div class="a3 down-arrow"></div>
                 </div>
                 <div>团队成员</div>
             </div>
@@ -328,7 +319,6 @@ export default {
 .next .a2,
 .next .a3 {
     height: .22rem;
-    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADsAAAAWCAYAAAB+F+RbAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAA35pVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOk9yaWdpbmFsRG9jdW1lbnRJRD0ieG1wLmRpZDpiOTQ5MGI0Ni03NTcwLTRhNmUtOTFlZi1jN2RjNGMyNWU5MmMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6OUNEMEJBN0E5OTkyMTFFODk2RDNGQzM1MkQ1QjBEM0QiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6OUNEMEJBNzk5OTkyMTFFODk2RDNGQzM1MkQ1QjBEM0QiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjA0ODAxMTc0MDcyMDY4MTE4MjJBRTJBRTU3MjRGN0NDIiBzdFJlZjpkb2N1bWVudElEPSJhZG9iZTpkb2NpZDpwaG90b3Nob3A6ODIyMDlhZjMtNTQzNi0xMTdhLWE4NmUtYzQxZDk3MDc1YzNmIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+X1YSIwAAAmBJREFUeNrc2EtIVFEcx/HrcYxwIVFEWGIubBX0sLKHYBYqBpqQEC1yVUZEKEGLIGjRpkWLoIULFwWpZUGLbJGWFhOVjx4k5CKYRSiWEJGJiyC1vid+i0Gcx525d5yZP3ycce69c8//nnP/59zJ2VlZF3Ic5yruONkbp3DB8KcRF9GFgixLcg0e4ByabLLjKMdPfMDeLEm0Ah8xiQP4nFu4udRumMcTfFEPr8Ib/M3AJHNxBddwBu1YsBvMkh17sRvVeIZNGZZoMV5gv/LoC99oljngK2owgLc4miGJNmEEj3AE00t3CEQ4cFHDYBB3Uasi9jsNk8zHDVShHu8j7WhifNEoylTV7PutaZbodrxTp+2Klmg8ydqYxUlcx3OcTYMkc9CKfq0R7Dw6F+uggIsTdGIobFi34McKJLoet7AO+zSDxBXG5YlCmr9CGjIHU5xotdYCY6h0k+j/OUnzrJtY1LT0SUtMe4Vf6nO/Ik8F8zKacTuR85kkGjCg4rUDQZT4lKjtjdfYovMFE/0ik2RDvqMB9zXHnfA40WYlau/RY8nWiIAHDbJLypu64ve0IGmLpzpGiQIt87bhsNbvSYfxsBfGtERbUPEqS/B7ynX8L70f96qBiRSoaPEHj/EN3fps2MWFv6TVUKte571snPGpqDzUo2KjnqY2xNh/I55qatmjBxLPw69kbUzgkBYidljWRdivQdsHdb9P+fbs5/EwXq54BbWuthW1SP/b+3q1hup5HEeP38/PfvZseLzSfFysHwXqdQHWqpCNpKIRASd1MaMePI0OFaOU/sj3T4ABAEb3eyFPZLaNAAAAAElFTkSuQmCC);
 }
 
 .foot {
@@ -394,7 +384,7 @@ export default {
     background-image: url('/assets/avatars/09.png');
 }
 .foot .avatar-ct .avatar-item .introduce {
-    width: 324px;
+    width: 3.24rem;
     position: absolute;
     background-color: #e1e6eb;
     height: 106.9%;
@@ -427,5 +417,44 @@ export default {
 .foot .avatar-ct.last .avatar-item .introduce {
     transform: translateY(-100%);
     height: 100%;
+}
+@media screen and (max-width:800px) {
+    .margin-top-page {
+        min-height: 3.7rem;
+    }
+    .margin-top-page .intro-sections {
+        top: .4rem;
+    }
+    .margin-top-page .intro-sections .title {
+        font-size: .18rem;
+    }
+    .margin-top-page .intro-sections ul,
+    .margin-top-page .next {
+       /* font-size: .08rem;
+        margin: .08rem 0 0;*/
+        transform: scale(.6);
+        transform-origin: top center;
+    }
+    .margin-top-page .next {
+        transform-origin: bottom center;
+    }
+  /*  .margin-top-page .intro-sections li {
+        width: 1.62rem;
+        margin: 0 .29rem;
+    }
+    .margin-top-page .intro-sections li .item-bg {
+        width: 1rem;
+        height: 1rem;
+        margin-left: .06rem;
+    }
+    .margin-top-page .intro-sections li.item-1 .item-bg {
+        background-position-x: -1.5rem;
+    }
+    .margin-top-page .intro-sections li.item-2 .item-bg {
+        background-position-x: -3rem;
+    }
+    .margin-top-page .intro-sections li.item-3 .item-bg {
+        background-position-x: -4.5rem;
+    }*/
 }
 </style>

@@ -1,6 +1,8 @@
 <template>
     <div class="margin-top-page">
-        <div :class="['wrapper', 'page' + page]">
+        <link rel="preload" as="image" href="/assets/02-hangye.png">
+        <link rel="preload" as="image" href="/assets/03-hangye.png">
+        <div :class="['wrapper', 'page' + page, 'big']">
             <div class="hangye-bd hangye01">
                 <div class="content-wrapper fade-in-content">
                     <div class="title">先进制造</div>
@@ -28,12 +30,59 @@
                 </div>
             </div>
         </div>
-        <svg :class='noCircleAni?"no-ani progress":"progress"' width="440" height="440" viewbox="0 0 440 440">
-            <circle cx="220" cy="220" r="170" stroke-width="15" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
-            <circle cx="220" cy="220" r="170" stroke-width="15" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
-            <circle cx="220" cy="220" r="148" stroke="none" fill="rgba(255,255,255,.06)" transform="matrix(0,-1,1,0,0,440)" :stroke-dasharray="circleProgress"></circle>
+        <svg class="progress big" width="58" height="58" viewbox="0 0 58 58">
+            <circle cx="29" cy="29" r="26" stroke-width="3" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
+            <circle cx="29" cy="29" r="26" stroke-width="3" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,58)" :stroke-dasharray="circleProgress"></circle>
+            <circle cx="29" cy="29" r="22" stroke="none" fill="rgba(255,255,255,.06)" transform="matrix(0,-1,1,0,0,58)" :stroke-dasharray="circleProgress"></circle>
             <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{'0' + page}}</text>
         </svg>
+        <div :class="['wrapper', 'page' + page, 'small']">
+            <div class="hangye-bd hangye01">
+                <div class="content-wrapper fade-in-content">
+                    <div class="title">先进制造</div>
+                    <p class='content'>全球3C和汽车产能向中国转移，</p>
+                    <p class='content'>催生一批细分行业独角兽。生产智能化技术、</p>
+                    <p class='content'>管理数字化手段推动中国制造</p>
+                    <p class='content'>向“高精”、“高速”、“高效”转型升级</p>
+                </div>
+                <svg class="progress" width="32" height="32" viewbox="0 0 32 32">
+                    <circle cx="16" cy="16" r="15" stroke-width="2" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
+                    <circle cx="16" cy="16" r="15" stroke-width="2" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,32)" :stroke-dasharray="circleProgressSmall"></circle>
+                    <circle cx="16" cy="16" r="13" stroke="none" fill="rgba(255,255,255,.06)" transform="matrix(0,-1,1,0,0,32)" :stroke-dasharray="circleProgressSmall"></circle>
+                    <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{'0' + page}}</text>
+                </svg>
+            </div>
+            <div class="hangye-bd hangye02">
+                <div class="content-wrapper fade-in-content">
+                    <div class="title">楼宇科技</div>
+                    <p class='content'>中国是全球最大的新建建筑市场和存量市场，</p>
+                    <p class='content'>数字化技术推动建筑设计手段、施工管理、安防技术、</p>
+                    <p class='content'>物业运营发生重大变化，</p>
+                    <p class='content'>让建筑和管理“更聪明”是不可阻挡的趋势</p>
+                </div>
+                <svg class="progress" width="32" height="32" viewbox="0 0 32 32">
+                    <circle cx="16" cy="16" r="15" stroke-width="2" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
+                    <circle cx="16" cy="16" r="15" stroke-width="2" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,32)" :stroke-dasharray="circleProgressSmall"></circle>
+                    <circle cx="16" cy="16" r="13" stroke="none" fill="rgba(255,255,255,.06)" transform="matrix(0,-1,1,0,0,32)" :stroke-dasharray="circleProgressSmall"></circle>
+                    <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{'0' + page}}</text>
+                </svg>
+            </div>
+            <div class="hangye-bd hangye03">
+                <div class="content-wrapper fade-in-content">
+                    <div class="title">智能能源</div>
+                    <p class='content'>随着电力负荷的高速增长，</p>
+                    <p class='content'>能源产供用体系将发生重大变化。电力输配和管理将更</p>
+                    <p class='content'>柔性、更智能。储能、电力电子、微网以及电力可靠性</p>
+                    <p class='content'>管理将带来巨大技术升级和管理变革</p>
+                </div>
+                <svg class="progress" width="32" height="32" viewbox="0 0 32 32">
+                    <circle cx="16" cy="16" r="15" stroke-width="2" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
+                    <circle cx="16" cy="16" r="15" stroke-width="2" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,32)" :stroke-dasharray="circleProgressSmall"></circle>
+                    <circle cx="16" cy="16" r="13" stroke="none" fill="rgba(255,255,255,.06)" transform="matrix(0,-1,1,0,0,32)" :stroke-dasharray="circleProgressSmall"></circle>
+                    <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{'0' + page}}</text>
+                </svg>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -44,8 +93,8 @@ export default {
         return {
             page: 1,
             countdown: countdown,
-            circleProgress: '1069 1069',
-            noCircleAni: false
+            circleProgress: '169 169',
+            circleProgressSmall: '94 94'
         };
     },
     mounted() {
@@ -55,13 +104,15 @@ export default {
         moveNextPage() {
             const me = this;
 
-            me.circleProgress = '1069 1069';
+            me.circleProgress = '169 169';
+            me.circleProgressSmall = '94 94';
             new Promise(function (resolve) {
                 // me.circleProgress = '0 1069';
                 const cirf = setInterval(function () {
                     const c = me.countdown,
                         cd = countdown;
-                    me.circleProgress = (1069 / cd * c) + ' 1069';
+                    me.circleProgress = (169 / cd * c) + ' 169';
+                    me.circleProgressSmall = (94 / cd * c) + ' 94';
                     if (me.countdown === 0) {
                         clearInterval(cirf);
                     }
@@ -90,7 +141,8 @@ export default {
                 }
                 me.moveNextPage();
                 me.countdown = countdown;
-                me.circleProgress = '1069 1069';
+                me.circleProgress = '169 169';
+                me.circleProgress = '94 94';
             });
         }
     }
@@ -98,19 +150,14 @@ export default {
 </script>
 
 <style scoped> 
-.progress {
-    transform: scale(0.12926);
-    transform-origin: bottom right;
-    font-size: .98rem;
+.progress.big {
+    font-size: .16rem;
     position: absolute;
     right: .2rem;
     bottom: .2rem;
 }
 .progress circle {
     transition: stroke-dasharray 1s;
-}
-.progress.no-ani circle {
-    transition: none;
 }
 .margin-top-page {
     position: relative;
@@ -120,6 +167,9 @@ export default {
     position: relative;
     height: 100%;
     transition: all .5s linear;
+}
+.wrapper.small {
+    display: none;
 }
 .wrapper.page1 {
     transform: translateY(0%);
@@ -159,5 +209,70 @@ export default {
 .hangye03 {
     background-image: url('/assets/03-hangye.png');
     transform: translateY(200%);
+}
+@media screen and (max-width:1024px) {
+    .hangye01 .content-wrapper,
+    .hangye02 .content-wrapper,
+    .hangye03 .content-wrapper {
+        margin: .6rem 0 0 .8rem;
+    }
+    .hangye01 .content-wrapper .content,
+    .hangye02 .content-wrapper .content,
+    .hangye03 .content-wrapper .content {
+        font-size: .12rem;
+    }
+    .hangye01 .content-wrapper .title,
+    .hangye02 .content-wrapper .title,
+    .hangye03 .content-wrapper .title {
+        font-size: .28rem;
+    }
+}
+@media screen and (max-width:800px) {
+    .wrapper.big,
+    .progress.big {
+        display: none;
+    }
+    .wrapper.small {
+        display: block;
+    }
+    .hangye01 .content-wrapper,
+    .hangye02 .content-wrapper,
+    .hangye03 .content-wrapper {
+        margin: .8rem 0 .3rem;
+        width: 100%;
+    }
+    .hangye01 .content-wrapper .content,
+    .hangye02 .content-wrapper .content,
+    .hangye03 .content-wrapper .content {
+        font-size: .08rem;
+        margin: .02rem;
+        text-align: center;
+    }
+    .hangye01 .content-wrapper .title,
+    .hangye02 .content-wrapper .title,
+    .hangye03 .content-wrapper .title {
+        font-size: .2rem;
+        margin-bottom: .08rem;
+        text-align: center;
+    }
+    .wrapper.small .content-wrapper,
+    .wrapper.small .progress {
+        position: static;
+    }
+    
+    .wrapper.small .progress {
+        font-size: .1rem;
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
+}
+@media screen and (min-width:1920px) {
+    
+}
+@media screen and (min-width:3000px) {
+
+}
+@media screen and (min-width:5000px) {
+
 }
 </style>

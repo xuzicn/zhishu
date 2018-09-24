@@ -28,11 +28,11 @@
                     <span class="address">电话：</span>
                 </p>
                 <p class='content mail first'>
-                    <span class='t'>提交商业计划书：</span>
+                    <span class='city'>提交BP：</span>
                     <a href='mailto:bp@stalacapital.com'>bp@stalacapital.com</a>
                 </p>
                 <p class='content mail'>
-                    <span class='t'>提交简历：</span>
+                    <span class='city'>提交简历：</span>
                     <a href='mailto:hr@stalacapital.com'>hr@stalacapital.com</a>
                 </p>
             </div>
@@ -64,18 +64,23 @@ export default {
     text-align: center;
 }
 .margin-top-page.common .content {
-    margin-bottom: .1rem;
+    margin-bottom: .09rem;
+    line-height: 1em;
+}
+.margin-top-page.common .content.tel {
+    margin-bottom: .21rem;
 }
 .margin-top-page.common .city {
     display: inline-block;
-    width: .6rem;
-    margin-right: .3rem;
+    width: .9rem;
+    margin-right: 0rem;
 }
 .margin-top-page.common .content-wrapper .content {
     display: inline-block;
 }
 .content.mail.first {
-    margin-top: .25rem;
+    margin-top: .08rem;
+    margin-bottom: .24rem;
 }
 .content.mail .t {
     width: 1.45rem;

@@ -33,4 +33,54 @@ export default {
     right: 1.11rem;
     bottom: 1.50rem;
 }
+@media screen and (max-width:1024px) {
+    .common.margin-top-page {
+        min-height: 4rem;
+    }
+    .common.margin-top-page .content-wrapper {
+        left: 1rem;
+        top: 0.4rem;
+    }
+    .common.margin-top-page .content-wrapper .content {
+        font-size: .1rem;
+        margin: .03rem 0;
+    }
+    .common.margin-top-page .content-wrapper .title {
+        font-size: .24rem;
+        margin-bottom: .1rem;
+    }
+}
+@media screen and (max-width:800px) {
+    .common.margin-top-page {
+        min-height: 3rem;
+    }
+    .common.margin-top-page .content-wrapper {
+        width: 100%;
+        position: absolute;
+        left: 0%;
+        top: 50%;
+        margin: 0rem;
+        padding: 0rem;
+        transform: translateY(-.8rem);
+    }
+    .common.margin-top-page .content-wrapper .content {
+        font-size: .08rem;
+        margin: .02rem;
+        text-align: center;
+    }
+    .common.margin-top-page .content-wrapper .title {
+        font-size: .2rem;
+        margin-bottom: .08rem;
+        text-align: center;
+    }
+}
+@media screen and (min-width:1920px) {
+    
+}
+@media screen and (min-width:3000px) {
+
+}
+@media screen and (min-width:5000px) {
+
+}
 </style>

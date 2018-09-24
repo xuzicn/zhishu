@@ -183,46 +183,13 @@ export default {
         opacity: 1;
     }
 }
-/*.nav {
-    position: absolute;
-    width: 30px;
-    right: 60px;
-    height: 100px;
-    display: flex;
-    flex-direction: column;
-    top: 50%;
-    transform: translateY(-50%);
-}
-.nav .item {
-    flex: 1;
-}
-.nav .item:hover {
-    background-color: rgba(0,0,0,0.2);
-    border-radius: 4px;
-    transition: all 0.5s ease;
-    cursor: pointer;
-}
-.nav .item:before {
-    content: ' ';
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    border-radius: 100%;
-    background-color: #313e48;
-    transition: all 0.5s ease;
-    transform: translateX(13px);
-}
-.nav .item.active:before {
-    background-color: #fff;
-}
-*/
 
 html, body {
     height: 100%;
     font-size: 100px;
 }
 body {
-    font-size: 0px;
+    font-size: 0rem;
 }
 #app {
     font-family: "Arial","Microsoft YaHei","黑体","宋体",sans-serif;

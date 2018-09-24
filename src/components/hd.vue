@@ -168,13 +168,8 @@ export default {
 }
 .hd .placeholder {
     flex: 1;
-    /*height: 10px;
-    background: red;*/
 }
 .menu-wrapper {
-    /*position: absolute;
-    top: .21rem;
-    right: 1.11rem;*/
     font-size: .14rem;
     color: #313e48;
     list-style: none;
@@ -188,7 +183,6 @@ export default {
     cursor: pointer;
     font-size: .3rem;
     text-align: center;
-    /*transform: translateY(6px);*/
 }
 .menu-wrapper ul {
     display: inline-block;
@@ -196,12 +190,12 @@ export default {
 .menu-wrapper ul li {
     display: inline-block;
     cursor: pointer;
-    line-height: .29rem;
+    line-height: .49rem;
     position: absolute;
-    top: .33rem;
+    top: .25rem;
     transition: all ease .3s;
     opacity: 1;
-    margin: 0px;
+    margin: 0rem;
     width: .9rem;
     text-align: center;
 }
@@ -209,14 +203,8 @@ export default {
     color: #ee8061;
     border-bottom: .02rem solid #ee8061;
 }
-/*.menu-wrapper ul li.active::before {
-    content: ' ';
-    display: inline-block;
-    width: 100%;
-}*/
 .menu-wrapper ul li:hover {
     color: #ee8061;
-    /*text-shadow: 0 0 .01rem rgba(0,0,0,.4);*/
 }
 .menu-wrapper ul li.menu-00 {
     right: 5.24rem;
@@ -250,6 +238,90 @@ export default {
 }
 .menu-wrapper.collapsed ul li.menu-04 {
     transform: translateX(0.80rem);
+}
+
+@media screen and (max-width:1024px) {
+    .hd {
+        height: .7rem;
+        min-height: .7rem;
+    }
+    .hd svg {
+        margin-left: .4rem;
+        transform: scale(.9);
+    }
+    .menu-wrapper {
+        margin-right: .6rem;
+        font-size: .12rem;
+    }
+    .menu-wrapper .icon {
+        font-size: .22rem;
+        transform: translateY(.03rem);
+    }
+    .menu-wrapper ul li {
+        top: .1rem;
+    }
+    .menu-wrapper ul li.menu-00 {
+        right: 4.74rem;
+    }
+    .menu-wrapper ul li.menu-01 {
+        right: 3.88rem;
+    }
+    .menu-wrapper ul li.menu-02 {
+        right: 3.052rem;
+    }
+    .menu-wrapper ul li.menu-03 {
+        right: 2.16rem;
+    }
+    .menu-wrapper ul li.menu-04 {
+        right: 1.3rem;
+    }
+}
+@media screen and (max-width:800px) {
+    .hd {
+        height: .5rem;
+        min-height: .5rem;
+    }
+    .hd svg {
+        margin-left: .2rem;
+        transform: scale(.6);
+    }
+    .menu-wrapper {
+        margin-right: .4rem;
+        font-size: .08rem;
+    }
+    .menu-wrapper .icon {
+        font-size: .18rem;
+        transform: translateY(.06rem);
+    }
+    .menu-wrapper ul li {
+        top: 0rem;
+        width: .6rem;
+    }
+    .menu-wrapper ul li.menu-00 {
+        right: 3.04rem;
+    }
+    .menu-wrapper ul li.menu-01 {
+        right: 2.48rem;
+    }
+    .menu-wrapper ul li.menu-02 {
+        right: 1.952rem;
+    }
+    .menu-wrapper ul li.menu-03 {
+        right: 1.36rem;
+    }
+    .menu-wrapper ul li.menu-04 {
+        right: .8rem;
+    }
+
+}
+@media screen and (min-width:1920px) {
+
+}
+@media screen and (min-width:3000px) {
+
+}
+@media screen and (min-width:5000px) {
+
 }
 /*.menu-wrapper .btn:hover {
     background-color: #c9c9c0;
