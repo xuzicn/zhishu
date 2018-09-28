@@ -142,7 +142,7 @@ export default {
                 me.moveNextPage();
                 me.countdown = countdown;
                 me.circleProgress = '169 169';
-                me.circleProgress = '94 94';
+                me.circleProgressSmall = '94 94';
             });
         }
     }

@@ -36,6 +36,14 @@ const routes = [
 const router = new VueRouter({
     routes // short for `routes: routes`
 });
+router.beforeEach(function (to, from, next) {
+    if (!to.matched || !to.matched.length) {
+        next(false);
+        router.replace('/home');
+    } else {
+        next();
+    }
+});
 // const major = 
 new Vue({
     router,
