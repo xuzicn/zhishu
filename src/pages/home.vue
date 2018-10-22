@@ -2,15 +2,17 @@
     <div class="margin-top-page home">
         <div class='bd'>
             <div class='content-bg'>
-                <div class="row" v-for="row in 3" :key="row">
+                <div class="h"></div>
+                <div class="f"></div>
+                <!-- <div class="row" v-for="row in 3" :key="row">
                     <div :class='"item item-" + row + "-" + column + ((activeRow===row&&activeColumn===column)?" active":"")' v-for="column in 3" :key="column"></div>
-                </div>
+                </div> -->
             </div>
             <div class="content-wrapper fade-in-content">
                 <div class="title">聚焦实业 智数在握</div>
                 <p class='content'>我们陪伴创业，我们培育创新，我们投资于产业“智能化”升级和“数字化”变革的成长型企业</p>
+                <br>
                 <div class="detail" @click="$router.replace('/hangye')">
-                    <div class="btn down-arrow"></div>
                     <p>点击了解我们的投资领域</p>
                 </div>
             </div>
@@ -20,25 +22,25 @@
 
 <script>
 export default {
-    data() {
-        return {
-            activeRow: this.random(3),
-            activeColumn: this.random(3)
-        };
-    },
-    mounted() {
-        setInterval(() => {
-            this.activeRow = this.random(3);
-            this.activeColumn = this.random(3);
-        }, 3000);
-    },
-    methods: {
-        random(max) {
-            let d = Math.random().toString();
-            d = parseInt(d.substr(d.length - 1));
-            return d % max + 1;
-        }
-    }
+    // data() {
+    //     return {
+    //         activeRow: this.random(3),
+    //         activeColumn: this.random(3)
+    //     };
+    // },
+    // mounted() {
+    //     setInterval(() => {
+    //         this.activeRow = this.random(3);
+    //         this.activeColumn = this.random(3);
+    //     }, 3000);
+    // },
+    // methods: {
+    //     random(max) {
+    //         let d = Math.random().toString();
+    //         d = parseInt(d.substr(d.length - 1));
+    //         return d % max + 1;
+    //     }
+    // }
 }
 </script>
 
@@ -49,14 +51,16 @@ export default {
 }
 .home.margin-top-page .content-bg {
     position: absolute;
-    display: flex;
-    flex-direction: column;
     left: 0px;
     right: 0px;
     top: 0px;
     bottom: 0px;
+    background-image: url(/assets/home.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
-.home.margin-top-page .content-bg .row {
+/*.home.margin-top-page .content-bg .row {
     flex: 1;
     display: flex;
     flex-direction: row;
@@ -120,24 +124,24 @@ export default {
 .home.margin-top-page .content-bg .row .item-2-3.active::after,
 .home.margin-top-page .content-bg .row .item-3-1.active::after {
     background-color: #ff8648;
-}
+}*/
 .home .content-wrapper {
-    top: 50%;
+    top: 45%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
 }
 .home .content-wrapper .title {
-    font-size: .71rem;
+    font-size: .6rem;
     color: #313e48;
     font-weight: bold;
     margin-bottom: .05rem;
-    width: 6.2rem;
     display: block;
+    text-align: center;
 }
 
 .home .content {
-    font-size: .21rem;
+    font-size: .18rem;
     color: #313e48;
     display: inline-block;
     margin: .05rem 0rem;
@@ -145,10 +149,13 @@ export default {
     width: 6.2rem;
 }
 .home .detail {
-    color: #313e48;
+    color: #fff;
     cursor: pointer;
     line-height: .35rem;
-    margin-top: .58rem;
+    margin-top: .2rem;
+    background-color: #f0805c;
+    display: inline-block;
+    padding: 0 .05rem;
 }
 .home .detail .btn {
     height: .22rem;
