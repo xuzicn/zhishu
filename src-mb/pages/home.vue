@@ -1,6 +1,6 @@
 <template>
     <div class="margin-top-page home">
-        <div class='bd'>
+        <v-touch tag='div'class='bd' @swipeup="$router.replace({path:'hangye'})">
             <div class="content-wrapper fade-in-content">
                 <div class="title">聚焦实业</div>
                 <div class="title last">智数在握</div>
@@ -13,7 +13,7 @@
                     <p>点击了解我们的投资领域</p>
                 </div>
             </div>
-        </div>
+        </v-touch>
     </div>
 </template>
 

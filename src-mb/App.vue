@@ -160,14 +160,31 @@ export default {
 </script>
 
 <style>
-.slide-up-enter, .slide-down-leave-active {
+.slide-down-enter {
+    transform: translate(0, 100%);
+}
+.slide-down-leave-active,
+.slide-down-enter-active,
+.slide-up-enter-active,
+.slide-up-leave-active {
+    position: absolute !important;
+    top: .73rem;
+    bottom: 0rem;
+    left: 0rem;
+    right: 0rem;
+}
+.slide-down-leave-active,
+.slide-up-enter {
+    transform: translate(0, -100%);
+}
+/*.slide-up-enter, .slide-down-leave-active {
     opacity: 0;
     transform: translate(0, -100%);
 }
 .slide-up-leave-active, .slide-down-enter {
     opacity: 0;
     transform: translate(0, 100%);
-}
+}*/
 .fade-enter {
     opacity: 0;
 }
@@ -205,7 +222,7 @@ body {
     flex-direction: column;
 }
 .app-bd {
-    transition: all .6s cubic-bezier(.55,0,.1,1);
+    transition: all .3s cubic-bezier(.55,0,.1,1);
     flex: 1;
     background-position: top center;
     background-repeat: no-repeat;

@@ -1,6 +1,6 @@
 <template>
     <div class="margin-top-page common">
-        <div class='bd'>
+        <v-touch tag='div'class='bd' @swipedown="$router.replace({path:'team'})">
             <div class="content-wrapper fade-in-content">
                 <div class="title">联系我们</div>
                 <div class='content'>北京市朝阳区望京方恒时代B座1203</div>
@@ -9,7 +9,7 @@
                 <div class="content">电话</div>
                 <div class='content'>邮箱</div>
             </div>
-        </div>
+        </v-touch>
     </div>
 </template>
 <script>

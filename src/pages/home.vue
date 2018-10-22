@@ -68,7 +68,7 @@ export default {
     content: ' ';
     display: block;
     background-repeat: no-repeat;
-    opacity: .1;
+    background-size: cover;
     height: 100%;
 }
 .home.margin-top-page .content-bg .row .item::after {
@@ -79,12 +79,32 @@ export default {
     transform: translateY(-100%);
     opacity: .3;
 }
-.home.margin-top-page .content-bg .row .item-1-1::before,
-.home.margin-top-page .content-bg .row .item-2-3::before,
-.home.margin-top-page .content-bg .row .item-3-1::before,
+.home.margin-top-page .content-bg .row .item-1-1::before {
+    background-image: url('/assets/home/1.png');
+}
+.home.margin-top-page .content-bg .row .item-1-2::before {
+    background-image: url('/assets/home/2.png');
+}
+.home.margin-top-page .content-bg .row .item-1-3::before {
+    background-image: url('/assets/home/3.png');
+}
+.home.margin-top-page .content-bg .row .item-2-1::before {
+    background-image: url('/assets/home/4.png');
+}
+.home.margin-top-page .content-bg .row .item-2-2::before {
+    background-image: url('/assets/home/5.png');
+}
+.home.margin-top-page .content-bg .row .item-2-3::before {
+    background-image: url('/assets/home/6.png');
+}
+.home.margin-top-page .content-bg .row .item-3-1::before {
+    background-image: url('/assets/home/7.png');
+}
 .home.margin-top-page .content-bg .row .item-3-2::before {
-    background-image: url('/assets/01-hangye-g.jpg');
-    background-size: cover;
+    background-image: url('/assets/home/8.png');
+}
+.home.margin-top-page .content-bg .row .item-3-3::before {
+    background-image: url('/assets/home/9.png');
 }
 .home.margin-top-page .content-bg .row .item-1-2.active::after,
 .home.margin-top-page .content-bg .row .item-2-1.active::after,
@@ -100,41 +120,6 @@ export default {
 .home.margin-top-page .content-bg .row .item-2-3.active::after,
 .home.margin-top-page .content-bg .row .item-3-1.active::after {
     background-color: #ff8648;
-}
-.home.margin-top-page .content-bg .row .item-1-1::before {
-    background-position: 63% 31%;
-}
-.home.margin-top-page .content-bg .row .item-2-3::before {
-    background-position: 79% 18%;
-    background-size: 550%;
-}
-.home.margin-top-page .content-bg .row .item-3-1::before {
-    background-position: 31% 81%;
-    background-size: 850%;
-}
-.home.margin-top-page .content-bg .row .item-3-2::before {
-    background-image: url('/assets/3-2-bg.jpg');
-    background-size: cover;
-}
-.home.margin-top-page .content-bg .row .item-2-1::before {
-    background-image: url('/assets/2-1-bg.jpg');
-    background-size: cover;
-    opacity: .15;
-}
-.home.margin-top-page .content-bg .row .item-3-3::before {
-    background-image: url('/assets/3-3-bg.jpg');
-    background-size: cover;
-    opacity: .15;
-}
-.home.margin-top-page .content-bg .row .item-1-3::before {
-    background-image: url('/assets/1-3-bg.png');
-    background-size: cover;
-    opacity: .15;
-}
-.home.margin-top-page .content-bg .row .item-1-2::before {
-    background-image: url('/assets/1-2-bg.png');
-    background-size: cover;
-    opacity: .15;
 }
 .home .content-wrapper {
     top: 50%;
@@ -178,12 +163,8 @@ export default {
 }
 @media screen and (max-width:1024px) {
     .home.margin-top-page {
-        background-image: url('/assets/home.png');
         position: relative;
         min-height: 4rem;
-    }
-    .home.margin-top-page .content-bg {
-        display: none;
     }
     .home .content-wrapper {
         transform: translate(-50%, -50%) scale(0.8);
@@ -191,12 +172,8 @@ export default {
 }
 @media screen and (max-width:800px) {
     .home.margin-top-page {
-        background-image: url('/assets/home.png');
         position: relative;
         min-height: auto;
-    }
-    .home.margin-top-page .content-bg {
-        display: none;
     }
     .home .content-wrapper {
         transform: translate(-50%, -50%) scale(0.4);

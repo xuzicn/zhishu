@@ -1,5 +1,5 @@
 <template>
-    <div class="margin-top-page common profile">
+    <v-touch tag='div' class="margin-top-page common profile" @swipedown="onSwipedown" @swipeup="onSwipeup">
         <div>
             <div :class="'bd item item-' + i" ref="bd" :style='"height:" + bdHeight + "px"' v-for="(item, i) in intros" :key="i">
                 <div :class='["intro-sections", {"first":i===0}]'>
@@ -30,12 +30,12 @@
                 </v-touch>
             </div>
         </div>
-    </div>
+    </v-touch>
 </template>
 
 <script>
 import iscroll from 'iscroll';
-window.iscroll = iscroll
+import profiles from '../../profiles';
 
 export default {
     data() {
@@ -52,96 +52,10 @@ export default {
             }, {
                 text: '我们谙熟楼宇科技、智能电力、智慧物流。我们熟悉细分行业发展规律和创新价值。我们在垂直领域拥有广泛的资源。'
             }],
-            profiles: [{
-                id: 'a01',
-                intro: {
-                    'name': '朱海',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a01',
-                intro: {
-                    'name': '朱海',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a02',
-                intro: {
-                    'name': '朱海',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a06',
-                intro: {
-                    'name': '朱海',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a03',
-                intro: {
-                    'name': '朱海',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a03',
-                intro: {
-                    'name': '朱海',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a05',
-                intro: {
-                    'name': '朱海',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a08',
-                intro: {
-                    'name': '朱海',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a04',
-                intro: {
-                    'name': '朱海',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a04',
-                intro: {
-                    'name': '朱海',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a07',
-                intro: {
-                    'name': '朱海007',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }, {
-                id: 'a09',
-                intro: {
-                    'name': '朱海008',
-                    'title': '高级合伙人',
-                    'introduce': '世界500强外企施耐德电气大中华区前总裁，全球高级总裁，全方位企业管理经验，对电力、自动化、楼宇有独特市场认知、战略思考和管理实战经验，精于产业投资与整合。'
-                }
-            }]
+            profiles: profiles
         };
     },
     mounted() {
-        // document.addEventListener('click', this.docClicked);
-
         this.$nextTick(() => {
             this.s = new iscroll(this.$el, {
                 mouseWheel: true,
@@ -158,9 +72,6 @@ export default {
             }, 2000);
         });
     },
-    // beforeDestroyed() {
-        // document.removeEventListener('click', this.docClicked);
-    // },
     methods: {
         scrollTo(i) {
             this.s.scrollTo(0, (-i - 1) * this.bdHeight, 500);
@@ -172,31 +83,22 @@ export default {
                 this.expandedItem = i;
             }
         },
-        // docClicked(e) {
-        //     if (!this.expandedItem) return;
-
-        //     const eTarget = e.target;
-
-        //     let elCursor = eTarget;
-        //     // let isClickOutSide = true;
-        //     while(elCursor) {
-        //         if (elCursor.classList.contains('avatar-item')) {
-        //             break;
-        //         } else if (elCursor === document.body) {
-        //             this.expandedItem = undefined;
-        //             break;
-        //         } else {
-        //             elCursor = elCursor.parentNode;
-        //         }
-        //     }
-        // }
+        onSwipeup() {
+            if (this.s.maxScrollY >= this.s.y) {
+                this.$router.push({ path: 'contact' });
+            }
+        },
+        onSwipedown() {
+            if (0 <= this.s.y) {
+                this.$router.push({ path: 'linian' });
+            }
+        }
     }
 }
 </script>
 
 <style scoped>
 .margin-top-page {
-    position: relative;
     overflow: hidden;
     font-size: 16px;
 }
@@ -415,6 +317,12 @@ export default {
 }
 .foot .avatar-item.last {
 
+}
+.foot .avatar-item.expanded .introduce {
+    min-height: .55rem;
+}
+.foot .avatar-item.expanded .introduce .name {
+    margin-top: 0rem;
 }
 .foot .avatar-item.last.expanded .introduce {
     bottom: 0px;

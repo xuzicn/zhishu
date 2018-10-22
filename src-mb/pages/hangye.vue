@@ -1,8 +1,6 @@
 <template>
     <div class="margin-top-page">
-        <link rel="preload" as="image" href="/assets/02-hangye.png">
-        <link rel="preload" as="image" href="/assets/03-hangye.png">
-        <div :class="['wrapper', 'page' + page, 'big']">
+        <v-touch tag="div" :class="['wrapper', 'page' + page, 'big']" @swipeup="onSwipeup" @swipedown="onSwipedown">
             <div class="hangye-bd hangye01">
                 <div class="content-wrapper fade-in-content">
                     <div class="title">先进制造</div>
@@ -33,7 +31,7 @@
                     <div class='content'>术升级和管理变革</div>
                 </div>
             </div>
-        </div>
+        </v-touch>
         <svg class="progress big" width="58" height="58" viewbox="0 0 58 58">
             <circle cx="29" cy="29" r="26" stroke-width="3" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
             <circle cx="29" cy="29" r="26" stroke-width="3" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,58)" :stroke-dasharray="circleProgress"></circle>
@@ -58,38 +56,62 @@ export default {
         this.moveNextPage();
     },
     methods: {
+        onSwipedown() {
+            if (this.page > 0) {
+                this.page--;
+                this.moveNextPage();
+                this.countdown = countdown;
+            } else {
+                this.$router.push({
+                    path: 'home'
+                });
+            }
+        },
+        onSwipeup() {
+            if (this.page < 3) {
+                this.page++;
+                this.moveNextPage();
+                this.countdown = countdown;
+            } else {
+                this.$router.push({
+                    path: 'linian'
+                });
+            }
+        },
         moveNextPage() {
             const me = this;
+            const pageV = this.page;
 
             me.circleProgress = '169 169';
-            // me.circleProgressSmall = '94 94';
-            new Promise(function (resolve) {
-                // me.circleProgress = '0 1069';
+
+            new Promise(function (resolve, reject) {
                 const cirf = setInterval(function () {
-                    const c = me.countdown,
-                        cd = countdown;
-                    me.circleProgress = (169 / cd * c) + ' 169';
-                    // me.circleProgressSmall = (94 / cd * c) + ' 94';
-                    if (me.countdown === 0) {
+                    if (pageV !== me.page) {
                         clearInterval(cirf);
-                    }
-                });
-                const f = setInterval(function () {
-                    if (me.countdown === 0) {
-                        resolve();
-                        clearInterval(f);
+                        return;
                     } else {
-                        me.countdown--;
+                        const c = me.countdown,
+                            cd = countdown;
+
+                        me.circleProgress = (169 / cd * c) + ' 169';
+                        if (me.countdown === 0) {
+                            clearInterval(cirf);
+                        }
                     }
                 }, 1000);
-            }).then(function () {
-                // me.noCircleAni = true;
-                return new Promise(function (resolve) {
-                    setTimeout(function () {
-                        resolve();
-                        // me.noCircleAni = false;
-                    }, 500);
-                });
+                const f = setInterval(function () {
+                    if (pageV !== me.page) {
+                        clearInterval(f);
+                        reject();
+                    } else {
+                        if (me.countdown === 0) {
+                            setTimeout(resolve, 500);
+                            clearInterval(f);
+                        } else {
+                            me.countdown--;
+                        }
+                    }
+                }, 1000);
             }).then(function () {
                 if (me.page === 3) {
                     me.page = 1;
@@ -98,8 +120,7 @@ export default {
                 }
                 me.moveNextPage();
                 me.countdown = countdown;
-                me.circleProgress = '169 169';
-                // me.circleProgress = '94 94';
+                me.circleProgress = '169 169'
             });
         }
     }

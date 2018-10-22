@@ -115,7 +115,7 @@
           <div class="icon-wrapper">
             <v-touch tag="div" class="icon" @tap="expanded=false"></v-touch>
           </div>
-          <v-touch tag="div" class="link" @tap="goTo('hangye')">被投行业</v-touch>
+          <v-touch tag="div" class="link" @tap="goTo('hangye')">投资领域</v-touch>
           <v-touch tag="div" class="link" @tap="goTo('linian')">投资理念</v-touch>
           <v-touch tag="div" class="link" @tap="goTo('team')">投资团队</v-touch>
           <v-touch tag="div" class="link" @tap="goTo('contact')">联系我们</v-touch>
@@ -167,6 +167,9 @@ export default {
     height: .73rem;
     display: flex;
     align-items: center;
+    padding: 0 .05rem;
+    z-index: 1;
+    background: #fff;
 }
 .hd svg {
     transform: scale(0.8);

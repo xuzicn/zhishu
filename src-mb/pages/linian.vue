@@ -1,6 +1,6 @@
 <template>
     <div class="margin-top-page common">
-        <div class='bd'>
+        <v-touch tag='div'class='bd' @swipedown="$router.replace({path:'hangye'})" @swipeup="$router.replace({path:'team'})">
             <div class="content-wrapper fade-in-content">
                 <div class="title">投资理念</div>
                 <div class='content'>我们深知创业维艰</div>
@@ -12,7 +12,7 @@
                 <div class='content'>我们嫁接行业资源、帮助人才成长</div>
                 <div class='content'>我们和创业伙伴一同发现成长的机遇，并肩应对那些至关重要的选择</div>
             </div>
-        </div>
+        </v-touch>
     </div>
 </template>
 
