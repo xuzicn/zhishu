@@ -27,7 +27,8 @@
                     <div class="introduce">
                         <div class="name">{{p.intro.name}}</div>
                         <div class="title">{{p.intro.title}}</div>
-                        <div class="intro-content">{{p.intro.introduce}}</div>
+                        <div class="intro-content">{{p.intro.introduce[0]}}</div>
+                        <div class="intro-content">{{p.intro.introduce[1]}}</div>
                     </div>
                 </div>
             </div>
@@ -338,7 +339,7 @@ export default {
     margin-bottom: .3rem;
 }
 .foot .avatar-ct .avatar-item .introduce .intro-content {
-    font-size: .16rem;
+    font-size: .14rem;
 }
 .foot .avatar-ct.last .avatar-item .introduce {
     transform: translateY(-100%);

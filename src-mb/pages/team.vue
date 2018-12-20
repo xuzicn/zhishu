@@ -25,7 +25,8 @@
                             <div class="name">{{p.intro.name}}</div>
                             <div class="title">{{p.intro.title}}</div>
                         </div>
-                        <div class="intro-content">{{p.intro.introduce}}</div>
+                        <div class="intro-content">{{p.intro.introduce[0]}}</div>
+                        <div class="intro-content">{{p.intro.introduce[1]}}</div>
                     </div>
                 </v-touch>
             </div>
