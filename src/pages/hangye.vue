@@ -98,7 +98,7 @@ export default {
         };
     },
     mounted() {
-        this.moveNextPage();
+        // this.moveNextPage();
     },
     methods: {
         moveNextPage() {
@@ -274,5 +274,11 @@ export default {
 }
 @media screen and (min-width:5000px) {
 
+}
+svg {
+    display: none;
+}
+.wrapper {
+    overflow: auto;
 }
 </style>
