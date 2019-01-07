@@ -310,6 +310,9 @@ export default {
 .foot .avatar-ct .avatar-item .avatar.a09 {
     background-image: url('/assets/avatars/09.png');
 }
+.foot .avatar-ct .avatar-item .avatar.a10 {
+    background-image: url('/assets/avatars/10.png');
+}
 .foot .avatar-ct .avatar-item .introduce {
     width: 3.24rem;
     position: absolute;

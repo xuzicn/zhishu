@@ -79,7 +79,7 @@ export default [{
         ]
     }
 }, {
-    id: 'a04',
+    id: 'a10',
     intro: {
         'name': '李廷波',
         'title': '智数资本合伙人',
