@@ -32,12 +32,12 @@
                 </div>
             </div>
         </v-touch>
-       <!--  <svg class="progress big" width="58" height="58" viewbox="0 0 58 58">
+        <svg class="progress big" width="58" height="58" viewbox="0 0 58 58">
             <circle cx="29" cy="29" r="26" stroke-width="3" stroke="rgba(255,255,255,0.06)" fill="none"></circle>
             <circle cx="29" cy="29" r="26" stroke-width="3" stroke="#fff" fill="none" transform="matrix(0,-1,1,0,0,58)" :stroke-dasharray="circleProgress"></circle>
             <circle cx="29" cy="29" r="22" stroke="none" fill="rgba(255,255,255,.06)" transform="matrix(0,-1,1,0,0,58)" :stroke-dasharray="circleProgress"></circle>
             <text x="50%" y="57%" text-anchor="middle" fill="rgba(255,255,255,0.28)">{{'0' + page}}</text>
-        </svg> -->
+        </svg>
     </div>
 </template>
 

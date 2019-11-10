@@ -22,9 +22,9 @@
         </div>
         <div class='foot' ref="ft">
             <div :key="rindex" v-for="(row, rindex) in profiles" :class='"avatar-ct " + ((rindex===profiles.length-1)?"last":"")'>
-                <div :key="index" v-for="(p, index) in row" :class='"avatar-item " + (expandedItem===p?"expanded":"collapsed")' @click="toggleItem(p)">
-                    <div :class="'avatar ' + p.id"></div>
-                    <div class="introduce">
+                <div :key="index" v-for="(p, index) in row" :class='"avatar-item " + (expandedItem===p?"expanded":"collapsed") + (p===null?" empty":"")' @click="toggleItem(p)">
+                    <div v-if="p!==null" class="avatar" :style="'background-image: url(\'/assets/avatars/' + p.bg + '\')'"></div>
+                    <div v-if="p!==null" class="introduce">
                         <div class="name">{{p.intro.name}}</div>
                         <div class="title">{{p.intro.title}}</div>
                         <div class="intro-content">{{p.intro.introduce[0]}}</div>
@@ -42,7 +42,7 @@ import profiles from '../../profiles';
 const pList = [];
 
 profiles.forEach(function (item, i) {
-    if (i % 2 === 0) {
+    if (i % 3 === 0) {
         pList.push([]);
     }
     pList[pList.length - 1].push(item);
@@ -85,6 +85,7 @@ export default {
             }, 10);
         },
         toggleItem(i) {
+            if (i === null) return;
             if (i === this.expandedItem) {
                 this.expandedItem = undefined;
             } else {
@@ -261,9 +262,12 @@ export default {
 }
 .foot .avatar-ct .avatar-item {
     width: 3.24rem;
-    margin: .85% .32rem;
+    margin: .85% .08rem;
     cursor: pointer;
     position: relative;
+}
+.foot .avatar-ct .avatar-item.empty {
+    cursor: auto;
 }
 
 .foot .avatar-ct .avatar-item::before {
@@ -282,36 +286,6 @@ export default {
     display: inline-block;
     width: 3.24rem;
     padding-bottom: 100%;
-}
-.foot .avatar-ct .avatar-item .avatar.a01 {
-    background-image: url('/assets/avatars/01.png');
-}
-.foot .avatar-ct .avatar-item .avatar.a02 {
-    background-image: url('/assets/avatars/02.png');
-}
-.foot .avatar-ct .avatar-item .avatar.a03 {
-    background-image: url('/assets/avatars/03.png');
-}
-.foot .avatar-ct .avatar-item .avatar.a04 {
-    background-image: url('/assets/avatars/04.png');
-}
-.foot .avatar-ct .avatar-item .avatar.a05 {
-    background-image: url('/assets/avatars/05.png');
-}
-.foot .avatar-ct .avatar-item .avatar.a06 {
-    background-image: url('/assets/avatars/06.png');
-}
-.foot .avatar-ct .avatar-item .avatar.a07 {
-    background-image: url('/assets/avatars/07.png');
-}
-.foot .avatar-ct .avatar-item .avatar.a08 {
-    background-image: url('/assets/avatars/08.png');
-}
-.foot .avatar-ct .avatar-item .avatar.a09 {
-    background-image: url('/assets/avatars/09.png');
-}
-.foot .avatar-ct .avatar-item .avatar.a10 {
-    background-image: url('/assets/avatars/10.png');
 }
 .foot .avatar-ct .avatar-item .introduce {
     width: 3.24rem;

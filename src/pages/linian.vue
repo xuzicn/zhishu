@@ -53,6 +53,7 @@ export default {
 @media screen and (max-width:800px) {
     .common.margin-top-page {
         min-height: 3rem;
+        background-image: url('/assets/05-bg-small.png');
     }
     .common.margin-top-page .content-wrapper {
         width: 100%;

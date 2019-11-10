@@ -108,7 +108,7 @@
       </svg>
       <div class="placeholder"></div>
       <v-touch tag="div" class="icon-wrapper" @tap="expanded=!expanded">
-        <div class="iconfont icon icon-more"></div>
+        <div class="iconfont icon icon-more-copy"></div>
       </v-touch>
       <transition name="fade">
         <div :class='["menu-wrapper", {"expanded":expanded}]' v-if="expanded">
@@ -237,6 +237,7 @@ export default {
     text-align: center;
     transition: all ease 0.2s;
     opacity: 0;
+    font-weight: 600;
 }
 .menu-wrapper.expanded {
     z-index: 1;

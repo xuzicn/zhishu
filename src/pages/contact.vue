@@ -4,28 +4,20 @@
             <div class="content-wrapper fade-in-content">
                 <div class="title">联系我们</div>
                 <p class='content site'>
-                    <span class="city">北京市</span>
-                    <span class="address">朝阳区望京方恒时代B座1203</span>
-                </p>
-                <p class="content site tel">
-                    <span class="city"></span>
-                    <span class="address">电话：</span>
+                    <span class="city">北京</span>
+                    <span class="address">朝阳区望京启阳路金辉大厦2901</span>
                 </p>
                 <p class='content site'>
-                    <span class="city">深圳市</span>
-                    <span class="address">南山区中国储能大厦42CD室</span>
-                </p>
-                <p class="content site tel">
-                    <span class="city"></span>
-                    <span class="address">电话：</span>
+                    <span class="city">深圳</span>
+                    <span class="address">南山区侨香路4080号侨城坊一期五号楼802</span>
                 </p>
                 <p class='content site'>
-                    <span class="city">上海市</span>
-                    <span class="address">浦东新区东泰路200弄8号</span>
+                    <span class="city">上海</span>
+                    <span class="address">长宁区仙霞路99号尚嘉中心18-118</span>
                 </p>
                 <p class="content site tel">
                     <span class="city"></span>
-                    <span class="address">电话：</span>
+                    <span class="address">010-64788187</span>
                 </p>
                 <p class='content mail first'>
                     <span class='city'>提交BP：</span>
@@ -54,7 +46,7 @@ export default {
 .margin-top-page.common .content-wrapper {
     position: absolute;
     color: #313e48;
-    width: 3.3rem;
+    width: 4.2rem;
     left: 50%;
     top: 50%;
     transform: translate(-50%,-50%);
@@ -66,9 +58,10 @@ export default {
 .margin-top-page.common .content {
     margin-bottom: .09rem;
     line-height: 1em;
+    margin-bottom: .2rem;
 }
 .margin-top-page.common .content.tel {
-    margin-bottom: .21rem;
+    margin-bottom: .4rem;
 }
 .margin-top-page.common .city {
     display: inline-block;

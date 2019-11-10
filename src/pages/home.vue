@@ -9,13 +9,18 @@
                 </div> -->
             </div>
             <div class="content-wrapper fade-in-content">
-                <div class="title">聚焦实业 智数在握</div>
+                <div class="title"><span>聚焦实业</span><span>智数在握</span></div>
                 <p class='content'>我们陪伴创业，我们培育创新，我们投资于产业“智能化”升级和“数字化”变革的成长型企业</p>
                 <br>
                 <div class="detail" @click="$router.replace('/hangye')">
                     <p>点击了解我们的投资领域</p>
                 </div>
             </div>
+        </div>
+        <div class="copyright">
+            <span>版权所有</span>
+            <span>深圳市优尼科投资管理合伙企业（有限合伙）</span>
+            <span><a href="//www.beian.miit.gov.cn" target="_blank">粤ICP备17113305号</a></span>
         </div>
     </div>
 </template>
@@ -54,11 +59,33 @@ export default {
     left: 0px;
     right: 0px;
     top: 0px;
-    bottom: 0px;
+    bottom: 60px;
     background-image: url(/assets/home.png);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+.copyright {
+    color: #313e48;
+    background: #fff;
+    font-size: 12px;
+    bottom: 0px;
+    position: fixed;
+    height: 60px;
+    display: flex;
+    left: 0px;
+    right: 0px;
+    justify-content: center;
+}
+.copyright span {
+    margin: 0 5px;
+    line-height: 60px;
+}
+.copyright span a {
+    color: #ff8648;
+}
+.copyright span a:visited {
+    color: #ff8648;
 }
 /*.home.margin-top-page .content-bg .row {
     flex: 1;
@@ -126,7 +153,7 @@ export default {
     background-color: #ff8648;
 }*/
 .home .content-wrapper {
-    top: 45%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -136,8 +163,19 @@ export default {
     color: #313e48;
     font-weight: bold;
     margin-bottom: .05rem;
-    display: block;
+    display: flex;
     text-align: center;
+    align-content: justify-content;
+}
+.home .content-wrapper .title span {
+    flex: 1;
+}
+
+.home .content-wrapper .title span:first-child {
+    text-align: left;
+}
+.home .content-wrapper .title span:last-child {
+    text-align: right;
 }
 
 .home .content {
@@ -146,13 +184,14 @@ export default {
     display: inline-block;
     margin: .05rem 0rem;
     font-weight: bold;
-    width: 6.2rem;
+    width: 5.2rem;
+    line-height: .35rem;
 }
 .home .detail {
     color: #fff;
     cursor: pointer;
     line-height: .35rem;
-    margin-top: .2rem;
+    margin-top: .1rem;
     background-color: #f0805c;
     display: inline-block;
     padding: 0 .05rem;

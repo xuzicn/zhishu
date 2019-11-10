@@ -10,6 +10,7 @@
   "dependencies": {
     "iscroll": "^5.2.0",
     "lodash": "^4.17.10",
+    "ua-device": "^0.1.10",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
     "vue-touch": "^2.0.0-beta.4"

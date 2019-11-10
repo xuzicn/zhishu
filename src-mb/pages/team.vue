@@ -19,14 +19,15 @@
                 <v-touch tag="div" :key="i" v-for="(p, i) in profiles"
                     :class='["avatar-item", {"last":(i===profiles.length-1)}, {"collapsed":expandedItem!==p}, {"expanded":expandedItem===p}]'
                     @tap="toggleItem(p)">
-                    <div :class="'avatar ' + p.id"></div>
+                    <div class="avatar" :style="'background-image: url(\'/assets/mobile/avatars/' + p.bg + '\')'"></div>
                     <div class="introduce">
-                        <div class="nt">
-                            <div class="name">{{p.intro.name}}</div>
-                            <div class="title">{{p.intro.title}}</div>
+                        <div class="name">{{p.intro.name}}</div>
+                        <div class="title">{{p.intro.title}}</div>
+                        <div class="intro-wrapper">
+                            <div class="intro-content c0">{{p.intro.introduce[0]}}</div>
+                            <div class="intro-content c1">{{p.intro.introduce[1]}}</div>
+                            <div class="triangle"></div>
                         </div>
-                        <div class="intro-content">{{p.intro.introduce[0]}}</div>
-                        <div class="intro-content">{{p.intro.introduce[1]}}</div>
                     </div>
                 </v-touch>
             </div>
@@ -53,7 +54,9 @@ export default {
             }, {
                 text: '我们谙熟楼宇科技、智能电力、智慧物流。我们熟悉细分行业发展规律和创新价值。我们在垂直领域拥有广泛的资源。'
             }],
-            profiles: profiles
+            profiles: profiles.filter(function (i) {
+                return !!i
+            })
         };
     },
     mounted() {
@@ -83,6 +86,9 @@ export default {
             } else {
                 this.expandedItem = i;
             }
+            setTimeout(() => {
+                this.s.refresh();
+            }, 400);
         },
         onSwipeup() {
             if (this.s.maxScrollY >= this.s.y) {
@@ -118,8 +124,9 @@ export default {
 }
 .margin-top-page .intro-sections .item-intro {
     text-align: left;
-    padding: 0 .3rem;
+    padding: 0 .6rem;
     font-size: .12rem;
+    line-height: 1.9em;
 }
 .margin-top-page .intro-sections .title {
     font-size: .26rem;
@@ -128,8 +135,8 @@ export default {
 .margin-top-page .intro-sections .item-bg {
     background-image: url('/assets/team-intro.png');
     display: inline-block;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.25rem;
+    height: 1.25rem;
     background-repeat: no-repeat;
     background-size: cover;
     border-radius: 50%;
@@ -137,13 +144,13 @@ export default {
     transition: all ease .3s;
 }
 .margin-top-page .item-1 .item-bg {
-    background-position-x: -1.5rem;
+    background-position-x: -1.25rem;
 }
 .margin-top-page .item-2 .item-bg {
-    background-position-x: -3rem;
+    background-position-x: -2.5rem;
 }
 .margin-top-page .item-3 .item-bg {
-    background-position-x: -4.5rem;
+    background-position-x: -3.75rem;
 }
 .margin-top-page .intro-sections img {
     margin-top: .39rem;
@@ -169,6 +176,11 @@ export default {
 .next .arrow {
     position: relative;
     cursor: pointer;
+}
+@media screen and (max-device-width: 320px) {
+    .next .arrow {
+        transform: scale(.7);
+    }
 }
 .next .a1 {
     opacity: .13;
@@ -228,52 +240,27 @@ export default {
     cursor: pointer;
     position: relative;
     display: inline-block;
-    padding-bottom: 0.55rem;
 }
-.foot .avatar-item::before {
+/*.foot .avatar-item::before {
     content: ' ';
     display: inline-block;
     position: absolute;
     left: 0rem;
     right: 0rem;
-    bottom: 0rem;
-    top: 0rem;
     background-color: #e1e6eb;
+    top: 0rem;
     opacity: 0;
     transition: all .3s ease;
-}
+    padding-bottom: 63%;
+}*/
 .foot .avatar-item .avatar {
     display: inline-block;
     width: 100%;
-    padding-bottom: 100%;
-    background-size: cover;
-}
-.foot .avatar-item .avatar.a01 {
-    background-image: url('/assets/avatars/01.png');
-}
-.foot .avatar-item .avatar.a02 {
-    background-image: url('/assets/avatars/02.png');
-}
-.foot .avatar-item .avatar.a03 {
-    background-image: url('/assets/avatars/03.png');
-}
-.foot .avatar-item .avatar.a04 {
-    background-image: url('/assets/avatars/04.png');
-}
-.foot .avatar-item .avatar.a05 {
-    background-image: url('/assets/avatars/05.png');
-}
-.foot .avatar-item .avatar.a06 {
-    background-image: url('/assets/avatars/06.png');
-}
-.foot .avatar-item .avatar.a07 {
-    background-image: url('/assets/avatars/07.png');
-}
-.foot .avatar-item .avatar.a08 {
-    background-image: url('/assets/avatars/08.png');
-}
-.foot .avatar-item .avatar.a09 {
-    background-image: url('/assets/avatars/09.png');
+    padding-bottom: 63%;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: #e1e6ec;
 }
 .foot .avatar-item .introduce {
     position: absolute;
@@ -285,47 +272,99 @@ export default {
     align-items: center;
     background-color: rgb(239,239,239);
     width: 100%;
+    flex-direction: column;
+    text-align: center;
+    height: .55rem;
+    min-height: .55rem;
+    position: relative;
 }
 .foot .avatar-item.expanded::before {
     opacity: .55;
 }
-.foot .avatar-item .introduce .nt {
+.foot .avatar-item.expanded .triangle {
+    display: block;
+}
+.foot .avatar-item.expanded .introduce {
+    background-color: #e1e6eb;
+    text-align: left;
+}
+/*.foot .avatar-item .introduce .nt {
     flex: 1;
     transition: all .2s linear;
+}*/
+.intro-wrapper {
+    padding: 0 .3rem .37rem .6rem;
+    background-color: #e1e6eb;
+    height: 0;
+    transition: all ease .3s;
+    background: transparent;
 }
 .foot .avatar-item .introduce .intro-content {
-    font-size: .12rem;
+    font-size: .09rem;
     flex: 0;
     line-height: 1.6em;
-    padding: .15rem .15rem .15rem 0;
     flex: 2;
     display: none;
     transition: all .2s linear;
+    height: 0rem;
+}
+.foot .avatar-item .introduce .intro-content.c0 {
+    margin: .9rem 0 .06rem;
 }
 .foot .avatar-item .introduce .name {
     font-size: .2rem;
-    line-height: 1em;
-    margin: .1rem 0 .06rem;
-    text-align: center;
+    font-weight: normal;
+    top: .1rem;
 }
 .foot .avatar-item .introduce .title {
-    font-size: .1rem;
+    font-size: .09rem;
+    top: .35rem;
+}
+.foot .avatar-item .introduce .name,
+.foot .avatar-item .introduce .title {
     line-height: 1em;
     text-align: center;
+    transition: all .3s ease;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
 }
 .foot .avatar-item.expanded .introduce .intro-content {
     display: block;
+    height: auto;
+}
+.foot .avatar-item.expanded .intro-wrapper {
+    height: auto;
 }
 .foot .avatar-item.last {
 
 }
 .foot .avatar-item.expanded .introduce {
-    min-height: .55rem;
+    height: 2.2rem;
 }
 .foot .avatar-item.expanded .introduce .name {
-    margin-top: 0rem;
+    top: .35rem;
+    left: .6rem;
+    transform: translateX(0%);
+}
+.foot .avatar-item.expanded .introduce .title {
+    top: .6rem;
+    left: .6rem;
+    transform: translateX(0%);
 }
 .foot .avatar-item.last.expanded .introduce {
     bottom: 0px;
+}
+.triangle {
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAATCAMAAAAkluS8AAAABGdBTUEAALGPC/xhBQAAAAFzUkdCAK7OHOkAAABLUExURUxpcaGpsIKMlMDGzHmEi19qc3B7hGVweJGaoNbe3t/f6v///9Tb39XV3Lm/xcXM0mx3gKqzuMnQ1bG5v8zR17zByJigplJeZ1djbOuCqhcAAAAXdFJOUwCx6FTx/vf91A8IAhoicEL5lzaBLWPH043zJQAAAIZJREFUKM+N0ssSgyAQRNERgQFFfCbN/39pysSyIiJw1nfTNUMUsyYYS0WDBCCHUjYydtOSz14KP6rNZTNOYX2s+gb/mj6dWYMr06UyJxET7p4tE+70FmetQgpHs9eAtOCfh17NZ9YZ5LyP2U4gT3zfYtMo2d/iOHwej6RRQxNXdUy+JlT+A1y+JpdAgg0MAAAAAElFTkSuQmCC);
+    width: .19rem;
+    height: .1rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: none;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: .16rem;
 }
 </style>

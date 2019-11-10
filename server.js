@@ -3,34 +3,38 @@ const http = require('http');
 const path = require('path');
 const fs = require('fs');
 const url = require('url');
+const uaDevice = require('ua-device');
 
 http.createServer((req, res) => {
-    const mockPath = path.join(__dirname, 'dist', url.parse(req.url).pathname);
+    const ua = new uaDevice(req.headers['user-agent']).device.type;
+    let pathname = url.parse(req.url).pathname;
+    if (/\.html$/ig.test(pathname))   {
+        pathname = (ua === 'mobile') ? '/mobile.html' : '/index.html';
+    }
+    const mockPath = path.join(__dirname, 'dist', pathname);
+    
 
     if (fs.existsSync(mockPath)) {
+
         if (fs.statSync(mockPath).isDirectory()) {
-            res.writeHead(301, { 'Location': '/index.html#/home'});
+            res.writeHead(301, { 'Location': ua === 'mobile'? '/mobile.html#/home':'/index.html#/home'});
             res.end();
         } else {
             res.writeHead(200, {
                 'Content-Type': getContentType(path.parse(mockPath).ext),
                 'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Credentials': true,
-                'Set-Cookie': '__token=asdfasdf;domain=localhost:8080;'
+                'Access-Control-Allow-Credentials': true
             });
-            // 模拟200ms的网络延迟
-            setTimeout(function () {
-                fs.createReadStream(mockPath, {
-                    autoClose: true
-                }).pipe(res);
-            }, 10);
+            fs.createReadStream(mockPath, {
+                autoClose: true
+            }).pipe(res);
         }
     } else {
         res.writeHead(404, { 'Content-Type': 'text/html' });
         res.write(`no mock at ${mockPath}`);
         res.end();
     }
-}).listen(8080);
+}).listen(80);
 
 function getContentType(extension) {
     return {

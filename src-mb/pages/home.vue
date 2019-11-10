@@ -1,16 +1,12 @@
 <template>
     <div class="margin-top-page home">
-        <v-touch tag='div'class='bd' @swipeup="$router.replace({path:'hangye'})">
+        <v-touch tag='div' class='bd' @swipeup="$router.replace({path:'hangye'})">
             <div class="content-wrapper fade-in-content">
                 <div class="title">聚焦实业</div>
                 <div class="title last">智数在握</div>
-                <div class='content'>我们陪伴创业，</div>
-                <div class='content'>我们培育创新，</div>
-                <div class='content'>我们投资于产业“智能化”升级和</div>
-                <div class='content'>“数字化”变革的成长型企业</div>
+                <div class='content'>我们陪伴创业，我们培育创新，我们投资于产业的<br>“智能化”升级和“数字化”<br>变革的成长型企业</div>
                 <div class="detail" @click="$router.push('/hangye')">
-                    <div class="btn down-arrow"></div>
-                    <p>点击了解我们的投资领域</p>
+                点击了解我们的投资领域
                 </div>
             </div>
         </v-touch>
@@ -51,9 +47,13 @@ export default {
 }
 .home .content-wrapper {
     top: 50%;
+    left: 50%;
     position: absolute;
-    width: 100%;
-    transform: translateY(-50%);
+    width: 70%;
+    min-width: 2.3rem;
+    background: #fff;
+    padding: .4rem 0 .3rem;
+    transform: translate(-50%, -50%);
 }
 .home .content-wrapper .title {
     font-size: .40rem;
@@ -67,28 +67,26 @@ export default {
 }
 
 .home .content-wrapper .content {
-    font-size: .12rem;
-    text-align: center;
-    line-height: 1em;
+    width: 1.52rem;
+    font-size: .13rem;
+    line-height: 2em;
     margin-bottom: .1rem;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    font-weight: bold;
 }
 .home .detail {
     cursor: pointer;
-    line-height: .35rem;
-    margin-top: .71rem;
-}
-.home .detail .btn {
-    height: .14rem;
-    width: 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: .26rem;
-}
-.home .detail p {
-    font-size: .11rem;
-    font-weight: bold;
-    margin: .1rem;
-    line-height: 1em;
+    line-height: .225rem;
+    height: .225rem;
+    background: #f0805c;
+    color: #fff;
+    margin-top: .15rem;
     text-align: center;
+    font-size: .11rem;
+    display: inline-block;
+    transform: translateX(-50%);
+    margin-left: 50%;
+    padding: 0 .12rem;
 }
 </style>
